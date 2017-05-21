@@ -8,6 +8,15 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('home');
+  this.route('demographics');
+  this.route('budget');
+  this.route('neighborhood');
+  this.route('housing-type');
+  this.route('housing-size');
+  this.route('housing-quality');
+  this.route('parking');
+  this.route('amenities');
+  this.route('thank-you');
 });
 
 export default Router;
