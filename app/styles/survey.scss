@@ -1,0 +1,75 @@
+.survey-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  height: 100vh;
+  .survey-modal {
+    display: flex;
+    flex-flow: column;
+    max-width: 800px;
+    max-height: 1000px;
+    width: 70%;
+    height: 80%;
+    background-color: white;
+    box-shadow: 1px 1px 5px #ccc;
+    border-radius: 10px;
+    .survey-header {
+      display: flex;
+      flex-flow: column;
+      align-content: center;
+      text-align: center;
+      padding: 20px;
+      h1 {
+        color: #555;
+      }
+      p, em {
+        color: #777;
+      }
+    }
+    .survey-body {
+      display: flex;
+      flex-flow: column;
+      padding: 20px;
+      .demographics {
+        margin-left: 100px;
+        .question-row {
+          .question {
+            &.inline {
+              margin-top: 12px;
+              display: inline-block;
+              vertical-align: top;
+              margin-right: 7px;
+            }
+            &.block {
+              display: block;
+              margin: 10px 0;
+            }
+          }
+          md-input-container {
+            margin: 5px 0;
+          }
+          &.timeframe {
+            margin-top: 35px;
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+    .survey-footer {
+      display: flex;
+      align-self: flex-end;
+      align-content: center;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      .back-btn {
+
+      }
+      .next-btn {
+        margin-left: auto;
+      }
+    }
+  }
+}

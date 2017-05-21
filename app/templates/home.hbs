@@ -1,1 +1,21 @@
-<h1>Home</h1>
+<div class="home-page">
+    <div class="header"></div>
+    <div class="banner-img">
+        {{#paper-card as |card|}}
+            {{#card.title as |title|}}
+                {{#title.text as |text|}}
+                    {{#text.headline}}Bismarck Housing Demand Survey{{/text.headline}}
+                {{/title.text}}
+            {{/card.title}}
+            {{#card.actions}}
+                {{#paper-button}}Learn More{{/paper-button}}
+                {{#paper-button}}
+                    {{#link-to 'demographics'}}Begin{{/link-to}}
+                {{/paper-button}}
+            {{/card.actions}}
+        {{/paper-card}}
+    </div>
+    <div class="footer">
+        ©2017 Bismarck Infill Housing Coalition
+    </div>
+</div>
