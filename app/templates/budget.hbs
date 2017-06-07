@@ -1,1 +1,48 @@
-{{outlet}}
+{{#survey-frame}}
+    <div class="survey-nav">
+        {{#link-to 'demographics' class="nav-section section-end"}}
+            Demographics
+        {{/link-to}}
+        {{#link-to 'budget' class="nav-section active"}}
+            Budget
+        {{/link-to}}
+        {{#link-to 'neighborhood' class="nav-section disabled"}}
+            Neighborhood
+        {{/link-to}}
+        {{#link-to 'housing-type' class="nav-section disabled section-end"}}
+            Housing Type
+        {{/link-to}}
+        {{#link-to 'housing-size' class="nav-section disabled"}}
+            Size
+        {{/link-to}}
+        {{#link-to 'housing-quality' class="nav-section disabled"}}
+            Quality
+        {{/link-to}}
+        {{#link-to 'amenities' class="nav-section disabled"}}
+            Amenities
+        {{/link-to}}
+    </div>
+    <div class="survey-header">
+        <h1>Housing Cost Calculator</h1>
+    </div>
+    <div class="survey-body">
+        <div class="budget">
+            <h3>How many people live in your household?</h3>
+            {{paper-slider class="flex" min=0 max=7}}
+            <h3>How many incomes are in your household?</h3>
+            {{paper-slider class="flex" min=0 max=7}}
+            <h3>What is your personal housing budget?</h3>
+            {{paper-slider class="flex" min=0 max=7}}
+            <h3>How much sq. footage would you like to have per person?</h3>
+            {{paper-slider class="flex" min=0 max=7}}
+        </div>
+    </div>
+    <div class="survey-footer">
+        {{#paper-button raised=true class='back-btn'}}
+            {{#link-to 'demographics'}}Back{{/link-to}}
+        {{/paper-button}}
+        {{#paper-button raised=true primary=true class='next-btn'}}
+            {{#link-to 'budget'}}Continue{{/link-to}}
+        {{/paper-button}}
+    </div>
+{{/survey-frame}}

@@ -1,4 +1,27 @@
 {{#survey-frame}}
+    <div class="survey-nav">
+        <div class="nav-section active section-end">
+            Demographics
+        </div>
+        <div class="nav-section disabled">
+            Budget
+        </div>
+        <div class="nav-section disabled">
+            Neighborhood
+        </div>
+        <div class="nav-section disabled section-end">
+            Housing Type
+        </div>
+        <div class="nav-section disabled">
+            Size
+        </div>
+        <div class="nav-section disabled">
+            Quality
+        </div>
+        <div class="nav-section disabled">
+            Amenities
+        </div>
+    </div>
     <div class="survey-header">
         <h1>Welcome to the Survey</h1>
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -67,7 +90,8 @@
         </div>
     </div>
     <div class="survey-footer">
-        {{#paper-button raised=true class='back-btn'}}Back{{/paper-button}}
-        {{#paper-button raised=true primary=true class='next-btn'}}Continue{{/paper-button}}
+        {{#paper-button raised=true primary=true class='next-btn'}}
+            {{#link-to 'budget'}}Continue{{/link-to}}
+        {{/paper-button}}
     </div>
 {{/survey-frame}}
