@@ -173,6 +173,33 @@
           }
         }
       }
+      .housing-type {
+        .housing-type-family-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .paper-switch {
+            display: inline-block;
+            margin: 0 5px;
+          }
+        }
+        .housing-type-options-row {
+          display: flex;
+          flex-flow: row;
+          margin: 10px 0 10px 10px;
+          .housing-type-option {
+            display: flex;
+            flex-flow: column;
+            flex-grow: 1;
+            margin-right: 10px;
+            .image {
+              background-color: $light-gray;
+              height: 200px;
+              width: 100%;
+            }
+          }
+        }
+      }
     }
     .survey-footer {
       display: flex;

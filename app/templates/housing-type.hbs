@@ -1,1 +1,81 @@
-{{outlet}}
+{{#survey-frame}}
+    <div class="survey-nav">
+        {{#link-to 'demographics' class="nav-section section-end"}}
+            Demographics
+        {{/link-to}}
+        {{#link-to 'budget' class="nav-section"}}
+            Budget
+        {{/link-to}}
+        {{#link-to 'neighborhood' class="nav-section"}}
+            Location
+        {{/link-to}}
+        {{#link-to 'housing-type' class="nav-section section-end active"}}
+            Housing Type
+        {{/link-to}}
+        {{#link-to 'housing-size' class="nav-section disabled"}}
+            Size
+        {{/link-to}}
+        {{#link-to 'housing-quality' class="nav-section disabled"}}
+            Quality
+        {{/link-to}}
+        {{#link-to 'amenities' class="nav-section disabled"}}
+            Amenities
+        {{/link-to}}
+    </div>
+    <div class="survey-header">
+        <h1>Housing Type</h1>
+        <p>What type of home are you looking for?</p>
+    </div>
+    <div class="survey-body">
+        <div class="housing-type">
+            <div class="housing-type-family-toggle">
+                <span>Single Family</span>
+                {{#paper-switch class="paper-switch" value=booleanProp1 onChange=(action (mut booleanProp1))}}
+                    Multi Family
+                {{/paper-switch}}
+            </div>
+            <div class="housing-type-options-row">
+                <div class="housing-type-option">
+                    <div class="image"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam laoreet imperdiet lectus sit amet gravida.
+                        Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
+                        Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
+                    </p>
+                </div>
+                <div class="housing-type-option">
+                    <div class="image"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam laoreet imperdiet lectus sit amet gravida.
+                        Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
+                        Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
+                    </p>
+                </div>
+                <div class="housing-type-option">
+                    <div class="image"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam laoreet imperdiet lectus sit amet gravida.
+                        Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
+                        Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
+                    </p>
+                </div>
+                <div class="housing-type-option">
+                    <div class="image"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam laoreet imperdiet lectus sit amet gravida.
+                        Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
+                        Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="survey-footer">
+        {{#paper-button raised=true class='back-btn'}}
+            {{#link-to 'neighborhood'}}Back{{/link-to}}
+        {{/paper-button}}
+        {{#paper-button raised=true primary=true class='next-btn'}}
+            {{#link-to 'housing-size'}}Continue{{/link-to}}
+        {{/paper-button}}
+    </div>
+{{/survey-frame}}
