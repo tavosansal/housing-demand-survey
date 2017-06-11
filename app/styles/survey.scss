@@ -100,9 +100,11 @@
       padding: 20px;
       h1 {
         color: $dark-gray;
+        margin-bottom: 3px;
       }
       p, em {
         color: $darkest-gray;
+        margin-top: 3px;
       }
     }
     .survey-body {
@@ -160,17 +162,6 @@
           display: flex;
           flex-flow: row;
           margin: 10px 0 10px 10px;
-          .neighborhood-option {
-            display: flex;
-            flex-flow: column;
-            flex-grow: 1;
-            margin-right: 10px;
-            .image {
-              background-color: $light-gray;
-              height: 200px;
-              width: 100%;
-            }
-          }
         }
       }
       .housing-type {
@@ -187,17 +178,6 @@
           display: flex;
           flex-flow: row;
           margin: 10px 0 10px 10px;
-          .housing-type-option {
-            display: flex;
-            flex-flow: column;
-            flex-grow: 1;
-            margin-right: 10px;
-            .image {
-              background-color: $light-gray;
-              height: 200px;
-              width: 100%;
-            }
-          }
         }
       }
     }
