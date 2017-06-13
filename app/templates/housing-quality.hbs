@@ -1,1 +1,60 @@
-{{outlet}}
+{{#survey-frame}}
+    <div class="survey-nav">
+        {{#link-to 'demographics' class="nav-section section-end"}}
+            Demographics
+        {{/link-to}}
+        {{#link-to 'budget' class="nav-section"}}
+            Budget
+        {{/link-to}}
+        {{#link-to 'neighborhood' class="nav-section"}}
+            Location
+        {{/link-to}}
+        {{#link-to 'housing-type' class="nav-section section-end"}}
+            Housing Type
+        {{/link-to}}
+        {{#link-to 'housing-size' class="nav-section"}}
+            Size
+        {{/link-to}}
+        {{#link-to 'housing-quality' class="nav-section active"}}
+            Quality
+        {{/link-to}}
+        {{#link-to 'amenities' class="nav-section disabled"}}
+            Amenities
+        {{/link-to}}
+    </div>
+    <div class="survey-header">
+    <h1>Housing Quality</h1>
+        <p>Fill out some details about your preferred housing type</p>
+    </div>
+    <div class="survey-body">
+        <div class="housing-quality">
+            <hr>
+            <div class="quality-questions-wrapper">
+                <div class="quality-question">
+                    <h4>Flooring</h4>
+                    <div class="image"></div>
+                    {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                   onChange=(action (mut toggleValue))}}
+                        High-end
+                    {{/paper-radio}}
+                    {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                   onChange=(action (mut toggleValue))}}
+                        Mid-range
+                    {{/paper-radio}}
+                    {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                   onChange=(action (mut toggleValue))}}
+                        Budget
+                    {{/paper-radio}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="survey-footer">
+        {{#paper-button raised=true class='back-btn'}}
+            {{#link-to 'neighborhood'}}Back{{/link-to}}
+        {{/paper-button}}
+        {{#paper-button raised=true primary=true class='next-btn'}}
+            {{#link-to 'housing-size'}}Continue{{/link-to}}
+        {{/paper-button}}
+    </div>
+{{/survey-frame}}

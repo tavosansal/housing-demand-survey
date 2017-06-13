@@ -180,6 +180,21 @@
           margin: 10px 0 10px 10px;
         }
       }
+      .housing-size {
+
+      }
+      .housing-quality {
+        .quality-questions-wrapper {
+          .quality-question {
+            .image {
+              background-color: $lightest-gray;
+              height: 100px;
+              width: 200px;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
     }
     .survey-footer {
       display: flex;
