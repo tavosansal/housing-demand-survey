@@ -6,14 +6,14 @@
         {{#link-to 'budget' class="nav-section"}}
             Budget
         {{/link-to}}
-        {{#link-to 'neighborhood' class="nav-section"}}
+        {{#link-to 'location' class="nav-section"}}
             Location
         {{/link-to}}
         {{#link-to 'housing-type' class="nav-section section-end"}}
             Housing Type
         {{/link-to}}
         {{#link-to 'housing-size' class="nav-section"}}
-            Size
+            Unit Plan
         {{/link-to}}
         {{#link-to 'housing-quality' class="nav-section active"}}
             Quality
@@ -23,38 +23,154 @@
         {{/link-to}}
     </div>
     <div class="survey-header">
-    <h1>Housing Quality</h1>
+        <h1>Housing Quality</h1>
         <p>Fill out some details about your preferred housing type</p>
     </div>
     <div class="survey-body">
         <div class="housing-quality">
             <hr>
             <div class="quality-questions-wrapper">
-                <div class="quality-question">
-                    <h4>Flooring</h4>
-                    <div class="image"></div>
-                    {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
-                                   onChange=(action (mut toggleValue))}}
-                        High-end
-                    {{/paper-radio}}
-                    {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
-                                   onChange=(action (mut toggleValue))}}
-                        Mid-range
-                    {{/paper-radio}}
-                    {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
-                                   onChange=(action (mut toggleValue))}}
-                        Budget
-                    {{/paper-radio}}
+                <div class="quality-questions-row">
+                    <div class="quality-question">
+                        <h4>Flooring</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High-end
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Mid-range
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Budget
+                        {{/paper-radio}}
+                    </div>
+                    <div class="quality-question">
+                        <h4>Trim/Hardware</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High-end
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Mid-range
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Budget
+                        {{/paper-radio}}
+                    </div>
+                    <div class="quality-question">
+                        <h4>Countertops</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High-end
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Mid-range
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Budget
+                        {{/paper-radio}}
+                    </div>
+                    <div class="quality-question">
+                        <h4>Cabinets</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High-end
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Mid-range
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Budget
+                        {{/paper-radio}}
+                    </div>
+                </div>
+                <div class="quality-questions-row">
+                    <div class="quality-question">
+                        <h4>Plumbing Fixtures</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High-end
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Mid-range
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Budget
+                        {{/paper-radio}}
+                    </div>
+                    <div class="quality-question">
+                        <h4>Appliances</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High-end
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Mid-range
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Budget
+                        {{/paper-radio}}
+                    </div>
+                    <div class="quality-question">
+                        <h4>Ceiling Height</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            High/Vaulted
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Normal
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Low
+                        {{/paper-radio}}
+                    </div>
+                    <div class="quality-question">
+                        <h4>Windows</h4>
+                        <div class="image"></div>
+                        {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Large
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Medium
+                        {{/paper-radio}}
+                        {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
+                                       onChange=(action (mut toggleValue))}}
+                            Small
+                        {{/paper-radio}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="survey-footer">
         {{#paper-button raised=true class='back-btn'}}
-            {{#link-to 'neighborhood'}}Back{{/link-to}}
+            {{#link-to 'housing-size'}}Back{{/link-to}}
         {{/paper-button}}
         {{#paper-button raised=true primary=true class='next-btn'}}
-            {{#link-to 'housing-size'}}Continue{{/link-to}}
+            {{#link-to 'amenities'}}Continue{{/link-to}}
         {{/paper-button}}
     </div>
 {{/survey-frame}}

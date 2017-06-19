@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('home', { path: '/' });
   this.route('demographics');
   this.route('budget');
-  this.route('neighborhood');
+  this.route('location');
   this.route('housing-type');
   this.route('housing-size');
   this.route('housing-quality');

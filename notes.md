@@ -4,7 +4,7 @@ Routes
 /home
 /demographics
 /budget
-/neighborhood
+/location
 /housing-type
 /housing-size
 /housing-quality
@@ -26,8 +26,8 @@ renting - boolean
 investing - boolean
 timeframe - string
 cost_per_square_foot - decimal
-neighborhood_preferance_age - string
-neighborhood_preferance_type - string
+location_preferance_age - string
+location_preferance_type - string
 housing_type - string
 bedroom1_square_feet - integer
 bedroom1_closet - bool

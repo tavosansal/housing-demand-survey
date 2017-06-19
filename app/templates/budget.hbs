@@ -6,14 +6,14 @@
         {{#link-to 'budget' class="nav-section active"}}
             Budget
         {{/link-to}}
-        {{#link-to 'neighborhood' class="nav-section disabled"}}
-            Neighborhood
+        {{#link-to 'location' class="nav-section disabled"}}
+            Location
         {{/link-to}}
         {{#link-to 'housing-type' class="nav-section disabled section-end"}}
             Housing Type
         {{/link-to}}
         {{#link-to 'housing-size' class="nav-section disabled"}}
-            Size
+            Unit Plan
         {{/link-to}}
         {{#link-to 'housing-quality' class="nav-section disabled"}}
             Quality
@@ -27,11 +27,17 @@
     </div>
     <div class="survey-body">
         <div class="budget">
-            <h3>How many people live in your household?</h3>
+            <h3>How many people live in your household?</h3>{{!--TODO: Add ability to increase max number here--}}
             {{paper-slider class="flex" min=0 max=7}}
             <h3>How many incomes are in your household?</h3>
             {{paper-slider class="flex" min=0 max=7}}
-            <h3>What is your personal housing budget?</h3>
+            <h3 class="inline-block">What is your personal housing budget?</h3>
+            <div class="help-hint">
+                {{paper-icon "help" size=18}}
+                <div class="popup bottom">
+                    A good rule of thumb is not to spend over 30% on gross income on housing, or over 50% on a combination of housing ant transportation.
+                </div>
+            </div>
             {{paper-slider class="flex" min=0 max=7}}
             <h3>How much sq. footage would you like to have per person?</h3>
             {{paper-slider class="flex" min=0 max=7}}
@@ -42,7 +48,7 @@
             {{#link-to 'demographics'}}Back{{/link-to}}
         {{/paper-button}}
         {{#paper-button raised=true primary=true class='next-btn'}}
-            {{#link-to 'neighborhood'}}Continue{{/link-to}}
+            {{#link-to 'location'}}Continue{{/link-to}}
         {{/paper-button}}
     </div>
 {{/survey-frame}}
