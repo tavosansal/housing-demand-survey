@@ -29,31 +29,22 @@
     <div class="survey-body">
         <div class="location">
             <div class="location-age-toggle">
-                <span>Historic</span>
+                <span>Existing</span>
                 {{#paper-switch class="paper-switch" value=booleanProp1 onChange=(action (mut booleanProp1))}}
                     New Construction
                 {{/paper-switch}}
             </div>
             <div class="location-options-row">
-                <div class="survey-hover-card">
-                    <div class="card-image"></div>
-                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam laoreet imperdiet lectus sit amet gravida.
-                        Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
-                        Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
-                    </p>
-                </div>
-                <div class="survey-hover-card">
-                    <div class="card-image"></div>
-                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam laoreet imperdiet lectus sit amet gravida.
-                        Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
-                        Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
-                    </p>
-                </div>
-                <div class="survey-hover-card">
-                    <div class="card-image"></div>
-                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <div class="survey-hero-card">
+                    <h4>Location Type</h4>
+                    {{#paper-button raised=true mini=true class="hero-arrow back"}}
+                        {{paper-icon "keyboard-arrow-left"}}
+                    {{/paper-button}}
+                    <div class="hero-image"></div>
+                    {{#paper-button raised=true mini=true class="hero-arrow forward"}}
+                        {{paper-icon "keyboard-arrow-right"}}
+                    {{/paper-button}}
+                    <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nullam laoreet imperdiet lectus sit amet gravida.
                         Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
                         Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
