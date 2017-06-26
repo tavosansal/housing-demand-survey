@@ -4,7 +4,21 @@
   justify-content: center;
   background-color: $lightest-gray;
   min-height: 100vh;
+  background: url(../img/DowntownBismarck2.jpg) no-repeat center;
+  background-size: 100% auto;
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    opacity: 0.8;
+    z-index: 10;
+  }
   .survey-modal {
+    z-index: 20;
     display: flex;
     flex-flow: column;
     max-width: 900px;
