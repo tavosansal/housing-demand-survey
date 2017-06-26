@@ -30,68 +30,71 @@
         </p>
         <em>Please fill out all of the following information</em>
     </div>
-    <div class="survey-body">
-        <div class="demographics">
-            <div class="question-row">
-                <span class="question inline">How old are you?</span>
-                {{paper-input
-                        type="number"
-                        label="Age"
-                        value=age
-                        max="120"
-                        onChange=(action (mut age))
-                        required=true
-                        errorMessages=(hash
-                                max="Enter a valid age"
-                        )
-                }}
-            </div>
-            <div class="question-row">
-                <span class="question inline">Where do you live?</span>
-                {{paper-input
-                        type="number"
-                        label="Zipcode"
-                        value=zipcode
-                        required=true
-                        onChange=(action (mut zipcode))
-                        max="99999"
-                        errorMessages=(hash
-                                max="Enter a valid zipcode"
-                        )
-                }}        </div>
-            <div class="question-row">
-                <span class="question block">In the future, which of the following would interest you the most?</span>
-                {{#paper-radio toggle=true value="Buy" groupValue=toggleValue
-                               onChange=(action (mut toggleValue))}}
-                    Buying a home/condo
-                {{/paper-radio}}
-                {{#paper-radio toggle=false value="Rent" groupValue=toggleValue
-                               onChange=(action (mut toggleValue))}}
-                    Renting an apartment/house
-                {{/paper-radio}}
-                {{#paper-radio toggle=false value="Invest" groupValue=toggleValue
-                               onChange=(action (mut toggleValue))}}
-                    Investing in property
-                {{/paper-radio}}
-            </div>
-            <div class="question-row timeframe">
-                <span class="question block">How soon would you consider doing what you marked above?</span>
-                {{#paper-select
-                        label="Timeframe"
-                        options=states
-                        selected=userState
-                        onChange=(action (mut userState))
-                as |state|}}
-                    Less than 1 year
-                    1 - 2 years
-                    2 _ years
-                {{/paper-select}}
-            </div>
-        </div>
-    </div>
-    <div class="survey-footer">
-        {{#paper-button raised=true primary=true class='next-btn'}}
-            {{#link-to 'budget'}}Continue{{/link-to}}
-        {{/paper-button}}
-    </div>
+    {{#paper-form onSubmit=(route-action "continue") as |form|}}
+      <div class="survey-body">
+          <div class="demographics">
+              <div class="question-row">
+                  <span class="question inline">How old are you?</span>
+                  {{paper-input
+                          type="number"
+                          label="Age"
+                          value=age
+                          max="120"
+                          onChange=(action (mut age))
+                          required=true
+                          errorMessages=(hash
+                                  max="Enter a valid age"
+                          )
+                  }}
+              </div>
+              <div class="question-row">
+                  <span class="question inline">Where do you live?</span>
+                  {{paper-input
+                          type="number"
+                          label="Zipcode"
+                          value=zipcode
+                          required=true
+                          onChange=(action (mut zipcode))
+                          max="99999"
+                          errorMessages=(hash
+                                  max="Enter a valid zipcode"
+                          )
+                  }}        </div>
+              <div class="question-row">
+                  <span class="question block">In the future, which of the following would interest you the most?</span>
+
+                  {{#paper-radio-group
+                    required=true
+                    groupValue=(readonly selectedFruit)
+                    onChange=(action (mut selectedFruit)) as |group|}}
+                    {{#group.radio value="buying" primary=true}}
+                      Buying a home/condo
+                    {{/group.radio}}
+                    {{#group.radio value="renting"}}
+                      Renting an apartment/house
+                    {{/group.radio}}
+                    {{#group.radio value="invest"}}
+                        Investing in property
+                    {{/group.radio}}
+                  {{/paper-radio-group}}
+              </div>
+              <div class="question-row timeframe">
+                  <span class="question block">How soon would you consider doing what you marked above?</span>
+                  {{#paper-select
+                          label="Timeframe"
+                          options=timeframes
+                          selected=timeframe
+                          onChange=(action (mut timeframe))
+                          required=true as |timeframe|}}
+                      {{timeframe}}
+                  {{/paper-select}}
+              </div>
+          </div>
+      </div>
+      <div class="survey-footer">
+          {{#form.submit-button raised=true primary=true class='next-btn'}}
+              Continue
+          {{/form.submit-button}}
+      </div>
+    {{/paper-form}}
 {{/survey-frame}}
