@@ -1,16 +1,52 @@
 <div class="survey-frame">
-    <div class="survey-modal">
-        {{yield}}
-        <div class="survey-budget-comparison">
-            <div class="comparison-column">
-                <h5>Budget Summary</h5>
-                <h2>2500 sq.ft.</h2>
-                <h5>X</h5>
-                <h2>$1.35/sq.ft.</h2>
-                <h5>=</h5>
-                <h2>$1000/mo</h2>
+    <div class="survey-modal-wrapper">
+        <div class="survey-modal">
+            {{yield}}
+        </div>
+        <div class="survey-modal-sidebar">
+            <div class="survey-budget-comparison">
+                <h4 class="section-header">Budget</h4>
+                <div class="comparison-row comparison-header hidden">
+                    <span class="left-col"></span>
+                    <span class="mid-col">Budget</span>
+                    <span class="right-col">Selection</span>
+                </div>
+                <div class="comparison-row">
+                    <span class="left-col">Total Square Feet</span>
+                    <span class="mid-col">2500</span>
+                    <span class="right-col hidden">3000</span>
+                </div>
+                <div class="comparison-row">
+                    <span class="left-col">Price Per Square Foot</span>
+                    <span class="mid-col">$1.25</span>
+                    <span class="right-col hidden">$1.75</span>
+                </div>
+                <div class="comparison-row">
+                    <span class="left-col">Total Monthly Payment</span>
+                    <span class="mid-col">$2000</span>
+                    <span class="right-col hidden">$2500</span>
+                </div>
             </div>
-            <div class="selection-column"></div>
+            <div class="survey-selections">
+                <h4 class="section-header">Location</h4>
+                <div class="selection-image">
+                    {{#paper-button raised=true mini=true class="edit-button"}}
+                        {{paper-icon "mode-edit"}}
+                    {{/paper-button}}
+                </div>
+                <h4 class="section-header">Housing Type</h4>
+                <div class="selection-image">
+                    {{#paper-button raised=true mini=true class="edit-button"}}
+                        {{paper-icon "mode-edit"}}
+                    {{/paper-button}}
+                </div>
+                <h4 class="section-header">Unit Type</h4>
+                <div class="selection-image">
+                    {{#paper-button raised=true mini=true class="edit-button"}}
+                        {{paper-icon "mode-edit"}}
+                    {{/paper-button}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
