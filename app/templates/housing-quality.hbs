@@ -1,26 +1,30 @@
 {{#survey-frame}}
     <div class="survey-nav">
-        {{#link-to 'demographics' class="nav-section section-end"}}
-            Demographics
-        {{/link-to}}
-        {{#link-to 'budget' class="nav-section"}}
-            Budget
-        {{/link-to}}
-        {{#link-to 'location' class="nav-section"}}
-            Location
-        {{/link-to}}
-        {{#link-to 'housing-type' class="nav-section section-end"}}
-            Housing Type
-        {{/link-to}}
-        {{#link-to 'housing-size' class="nav-section"}}
-            Unit Plan
-        {{/link-to}}
-        {{#link-to 'housing-quality' class="nav-section active"}}
-            Quality
-        {{/link-to}}
-        {{#link-to 'amenities' class="nav-section disabled"}}
-            Amenities
-        {{/link-to}}
+        <div class="nav-section-wrapper">
+            {{#link-to 'demographics' class="nav-section section-end"}}
+                Demographics
+            {{/link-to}}
+            {{#link-to 'budget' class="nav-section"}}
+                Budget
+            {{/link-to}}
+            {{#link-to 'location' class="nav-section"}}
+                Location
+            {{/link-to}}
+            {{#link-to 'housing-type' class="nav-section section-end"}}
+                Housing Type
+            {{/link-to}}
+        </div>
+        <div class="nav-section-wrapper">
+            {{#link-to 'housing-size' class="nav-section"}}
+                Unit Plan
+            {{/link-to}}
+            {{#link-to 'housing-quality' class="nav-section active"}}
+                Quality
+            {{/link-to}}
+            {{#link-to 'amenities' class="nav-section disabled"}}
+                Amenities
+            {{/link-to}}
+        </div>
     </div>
     <div class="survey-header">
         <h1>Housing Quality</h1>
@@ -28,7 +32,6 @@
     </div>
     <div class="survey-body">
         <div class="housing-quality">
-            <hr>
             <div class="quality-questions-wrapper">
                 <div class="quality-questions-row">
                     <div class="quality-question">
@@ -95,8 +98,6 @@
                             Budget
                         {{/paper-radio}}
                     </div>
-                </div>
-                <div class="quality-questions-row">
                     <div class="quality-question">
                         <h4>Plumbing Fixtures</h4>
                         <div class="image"></div>

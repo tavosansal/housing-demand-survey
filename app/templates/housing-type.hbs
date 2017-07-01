@@ -1,26 +1,30 @@
 {{#survey-frame}}
     <div class="survey-nav">
-        {{#link-to 'demographics' class="nav-section section-end"}}
-            Demographics
-        {{/link-to}}
-        {{#link-to 'budget' class="nav-section"}}
-            Budget
-        {{/link-to}}
-        {{#link-to 'location' class="nav-section"}}
-            Location
-        {{/link-to}}
-        {{#link-to 'housing-type' class="nav-section section-end active"}}
-            Housing Type
-        {{/link-to}}
-        {{#link-to 'housing-size' class="nav-section disabled"}}
-            Unit Plan
-        {{/link-to}}
-        {{#link-to 'housing-quality' class="nav-section disabled"}}
-            Quality
-        {{/link-to}}
-        {{#link-to 'amenities' class="nav-section disabled"}}
-            Amenities
-        {{/link-to}}
+        <div class="nav-section-wrapper">
+            {{#link-to 'demographics' class="nav-section section-end"}}
+                Demographics
+            {{/link-to}}
+            {{#link-to 'budget' class="nav-section"}}
+                Budget
+            {{/link-to}}
+            {{#link-to 'location' class="nav-section"}}
+                Location
+            {{/link-to}}
+            {{#link-to 'housing-type' class="nav-section section-end active"}}
+                Housing Type
+            {{/link-to}}
+        </div>
+        <div class="nav-section-wrapper">
+            {{#link-to 'housing-size' class="nav-section disabled"}}
+                Unit Plan
+            {{/link-to}}
+            {{#link-to 'housing-quality' class="nav-section disabled"}}
+                Quality
+            {{/link-to}}
+            {{#link-to 'amenities' class="nav-section disabled"}}
+                Amenities
+            {{/link-to}}
+        </div>
     </div>
     <div class="survey-header">
         <h1>Housing Type</h1>
@@ -29,35 +33,39 @@
     <div class="survey-body">
         <div class="housing-type">
             <div class="housing-type-family-toggle">
-                <span>Single Family</span>
+                <span>Rehab</span>
                 {{#paper-switch class="paper-switch" value=booleanProp1 onChange=(action (mut booleanProp1))}}
-                    Multi Family
+                    New Construction
                 {{/paper-switch}}
             </div>
             <div class="housing-type-options-row">
                 <div class="survey-hero-card">
                     <div class="survey-hero-options-row">
-                        <button class="survey-hero-option is-focused">
-                            Option 1
-                        </button>
-                        <button class="survey-hero-option">
-                            Option 2
-                        </button>
-                        <button class="survey-hero-option">
-                            Option 3
-                        </button>
-                        <button class="survey-hero-option">
-                            Option 4
-                        </button>
-                        <button class="survey-hero-option">
-                            Option 5
-                        </button>
-                        <button class="survey-hero-option">
-                            Option 6
-                        </button>
-                        <button class="survey-hero-option">
-                            Option 7
-                        </button>
+                        <div class="survey-hero-options-section">
+                            <button class="survey-hero-option is-focused">
+                                Option 1
+                            </button>
+                            <button class="survey-hero-option">
+                                Option 2
+                            </button>
+                            <button class="survey-hero-option">
+                                Option 3
+                            </button>
+                            <button class="survey-hero-option">
+                                Option 4
+                            </button>
+                        </div>
+                        <div class="survey-hero-options-section">
+                            <button class="survey-hero-option">
+                                Option 5
+                            </button>
+                            <button class="survey-hero-option">
+                                Option 6
+                            </button>
+                            <button class="survey-hero-option">
+                                Option 7
+                            </button>
+                        </div>
                     </div>
                     <div class="survey-card-image">
                         <h4>Housing Type</h4>

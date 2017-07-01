@@ -1,26 +1,30 @@
 {{#survey-frame}}
     <div class="survey-nav">
-        {{#link-to 'demographics' class="nav-section section-end"}}
-            Demographics
-        {{/link-to}}
-        {{#link-to 'budget' class="nav-section"}}
-            Budget
-        {{/link-to}}
-        {{#link-to 'location' class="nav-section"}}
-            Location
-        {{/link-to}}
-        {{#link-to 'housing-type' class="nav-section section-end"}}
-            Housing Type
-        {{/link-to}}
-        {{#link-to 'housing-size' class="nav-section active"}}
-            Unit Plan
-        {{/link-to}}
-        {{#link-to 'housing-quality' class="nav-section disabled"}}
-            Quality
-        {{/link-to}}
-        {{#link-to 'amenities' class="nav-section disabled"}}
-            Amenities
-        {{/link-to}}
+        <div class="nav-section-wrapper">
+            {{#link-to 'demographics' class="nav-section section-end"}}
+                Demographics
+            {{/link-to}}
+            {{#link-to 'budget' class="nav-section"}}
+                Budget
+            {{/link-to}}
+            {{#link-to 'location' class="nav-section"}}
+                Location
+            {{/link-to}}
+            {{#link-to 'housing-type' class="nav-section section-end"}}
+                Housing Type
+            {{/link-to}}
+        </div>
+        <div class="nav-section-wrapper">
+            {{#link-to 'housing-size' class="nav-section active"}}
+                Unit Plan
+            {{/link-to}}
+            {{#link-to 'housing-quality' class="nav-section disabled"}}
+                Quality
+            {{/link-to}}
+            {{#link-to 'amenities' class="nav-section disabled"}}
+                Amenities
+            {{/link-to}}
+        </div>
     </div>
     <div class="survey-header">
         <h1>Unit Plans</h1>
@@ -29,17 +33,16 @@
     <div class="survey-body">
         <div class="unit-size">
             <div class="unit-size-options-row">
+                <div class="unit-size-sliders">
+                    <h3>How many bedrooms?</h3>{{!-- TODO: Max of 3+ --}}
+                    {{paper-slider class="flex" min=0 max=3}}
+                    <h3>How many bathrooms?</h3>{{!-- TODO: Make this work in increments of 1/2, max at 2.5--}}
+                    {{paper-slider class="flex" min=0 max=2.5}}
+                </div>
                 <div class="survey-hero-card">
-                    {{!-- TODO: Jmo remember sliders here--}}
                     <div class="survey-card-image">
                         <h4>Unit Type</h4>
-                        {{#paper-button raised=true mini=true class="hero-arrow back"}}
-                            {{paper-icon "keyboard-arrow-left"}}
-                        {{/paper-button}}
                         <div class="hero-image"></div>
-                        {{#paper-button raised=true mini=true class="hero-arrow forward"}}
-                            {{paper-icon "keyboard-arrow-right"}}
-                        {{/paper-button}}
                         <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Nullam laoreet imperdiet lectus sit amet gravida.
                             Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.

@@ -1,100 +1,105 @@
 {{#survey-frame}}
     <div class="survey-nav">
-        <div class="nav-section active section-end">
-            Demographics
+        <div class="nav-section-wrapper">
+            <div class="nav-section active section-end">
+                Demographics
+            </div>
+            <div class="nav-section disabled">
+                Budget
+            </div>
+            <div class="nav-section disabled">
+                Location
+            </div>
+            <div class="nav-section disabled section-end">
+                Housing Type
+            </div>
         </div>
-        <div class="nav-section disabled">
-            Budget
-        </div>
-        <div class="nav-section disabled">
-            location
-        </div>
-        <div class="nav-section disabled section-end">
-            Housing Type
-        </div>
-        <div class="nav-section disabled">
-            Size
-        </div>
-        <div class="nav-section disabled">
-            Quality
-        </div>
-        <div class="nav-section disabled">
-            Amenities
+        <div class="nav-section-wrapper">
+            <div class="nav-section disabled">
+                Size
+            </div>
+            <div class="nav-section disabled">
+                Quality
+            </div>
+            <div class="nav-section disabled">
+                Amenities
+            </div>
         </div>
     </div>
     <div class="survey-header">
-        <h1>Welcome to the Survey</h1>
-        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        <h1>Welcome to the Bismarck Housing Survey</h1>
+        <p>The purpose of this survey is to help provide you with details about available housing options
+            and to help you develop a housing budget. We will then use this information to
+            track the housing needs in Bismarck and use it to promote new building projects. All your information
+            will be kept confidential.
         </p>
         <em>Please fill out all of the following information</em>
     </div>
     {{#paper-form onSubmit=(route-action "continue") as |form|}}
-      <div class="survey-body">
-          <div class="demographics">
-              <div class="question-row">
-                  <span class="question inline">How old are you?</span>
-                  {{paper-input
-                          type="number"
-                          label="Age"
-                          value=age
-                          max="120"
-                          onChange=(action (mut age))
-                          required=true
-                          errorMessages=(hash
-                                  max="Enter a valid age"
-                          )
-                  }}
-              </div>
-              <div class="question-row">
-                  <span class="question inline">Where do you live?</span>
-                  {{paper-input
-                          type="number"
-                          label="Zipcode"
-                          value=zipcode
-                          required=true
-                          onChange=(action (mut zipcode))
-                          max="99999"
-                          errorMessages=(hash
-                                  max="Enter a valid zipcode"
-                          )
-                  }}        </div>
-              <div class="question-row">
-                  <span class="question block">In the future, which of the following would interest you the most?</span>
+        <div class="survey-body">
+            <div class="demographics">
+                <div class="question-row">
+                    <span class="question inline">How old are you?</span>
+                    {{paper-input
+                            type="number"
+                            label="Age"
+                            value=age
+                            max="120"
+                            onChange=(action (mut age))
+                            required=true
+                            errorMessages=(hash
+                                    max="Enter a valid age"
+                            )
+                    }}
+                </div>
+                <div class="question-row">
+                    <span class="question inline">Where do you live?</span>
+                    {{paper-input
+                            type="number"
+                            label="Zipcode"
+                            value=zipcode
+                            required=true
+                            onChange=(action (mut zipcode))
+                            max="99999"
+                            errorMessages=(hash
+                                    max="Enter a valid zipcode"
+                            )
+                    }}        </div>
+                <div class="question-row">
+                    <span class="question block">In the future, which of the following would interest you the most?</span>
 
-                  {{#paper-radio-group
-                    required=true
-                    groupValue=(readonly selectedFruit)
-                    onChange=(action (mut selectedFruit)) as |group|}}
-                    {{#group.radio value="buying" primary=true}}
-                      Buying a home/condo
-                    {{/group.radio}}
-                    {{#group.radio value="renting"}}
-                      Renting an apartment/house
-                    {{/group.radio}}
-                    {{#group.radio value="invest"}}
-                        Investing in property
-                    {{/group.radio}}
-                  {{/paper-radio-group}}
-              </div>
-              <div class="question-row timeframe">
-                  <span class="question block">How soon would you consider doing what you marked above?</span>
-                  {{#paper-select
-                          label="Timeframe"
-                          options=timeframes
-                          selected=timeframe
-                          onChange=(action (mut timeframe))
-                          required=true as |timeframe|}}
-                      {{timeframe}}
-                  {{/paper-select}}
-              </div>
-          </div>
-      </div>
-      <div class="survey-footer">
-          {{#form.submit-button raised=true primary=true class='next-btn'}}
-              Continue
-          {{/form.submit-button}}
-      </div>
+                    {{#paper-radio-group
+                            required=true
+                            groupValue=(readonly selectedFruit)
+                            onChange=(action (mut selectedFruit)) as |group|}}
+                        {{#group.radio value="buying" primary=true}}
+                            Buying a home/condo
+                        {{/group.radio}}
+                        {{#group.radio value="renting"}}
+                            Renting an apartment/house
+                        {{/group.radio}}
+                        {{#group.radio value="invest"}}
+                            Investing in property
+                        {{/group.radio}}
+                    {{/paper-radio-group}}
+                </div>
+                <div class="question-row timeframe">
+                    <span class="question block">How soon would you consider doing what you marked above?</span>
+                    {{#paper-select
+                            label="Timeframe"
+                            options=timeframes
+                            selected=timeframe
+                            onChange=(action (mut timeframe))
+                            required=true as |timeframe|}}
+                        {{timeframe}}
+                    {{/paper-select}}
+                </div>
+            </div>
+        </div>
+        <div class="survey-footer">
+            {{#form.submit-button raised=true primary=true class='next-btn'}}
+                Continue
+            {{/form.submit-button}}
+        </div>
     {{/paper-form}}
 {{/survey-frame}}

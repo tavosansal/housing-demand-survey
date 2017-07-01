@@ -97,33 +97,39 @@ button {
     align-content: center;
     flex-flow: row;
     padding: 10px 0;
-    .survey-hero-option {
+    .survey-hero-options-section {
       display: flex;
-      padding: 10px;
-      margin: 0 3px;
+      align-content: center;
+      flex-flow: row;
       width: 100%;
-      min-width: 75px;
-      justify-content: center;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: $dark-gray;
-      background: none;
-      border: none;
-      transition: all 200ms ease;
-      &:hover,
-      &.is-focused {
-        background-color: $light-gray;
-        border-radius: 4px;
-        color: darken($dark-gray, 5%);
-      }
-      &:hover {
-        cursor: pointer;
-      }
-      &:first-of-type {
-        margin-left: 0;
-      }
-      &:last-of-type {
-        margin-right: 0;
+      .survey-hero-option {
+        display: flex;
+        padding: 10px;
+        margin: 0 3px;
+        width: 100%;
+        min-width: 75px;
+        justify-content: center;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $dark-gray;
+        background: none;
+        border: none;
+        transition: all 200ms ease;
+        &:hover,
+        &.is-focused {
+          background-color: $light-gray;
+          border-radius: 4px;
+          color: darken($dark-gray, 5%);
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
     }
   }
