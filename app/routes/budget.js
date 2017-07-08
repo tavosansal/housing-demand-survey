@@ -5,8 +5,6 @@ export default Ember.Route.extend({
 
   actions: {
     continue() {
-      debugger;
-
       const currentSurvey = this.get('surveyRecord').current();
       const {peopleInHousehold, incomesInHousehold, housingBudget, squareFeetPerPerson} = this.controller.getProperties(
         'peopleInHousehold', 'incomesInHousehold', 'housingBudget', 'squareFeetPerPerson');
