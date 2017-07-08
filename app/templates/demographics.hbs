@@ -70,8 +70,8 @@
 
                     {{#paper-radio-group
                             required=true
-                            groupValue=(readonly selectedFruit)
-                            onChange=(action (mut selectedFruit)) as |group|}}
+                            groupValue=(readonly interest)
+                            onChange=(action (mut interest)) as |group|}}
                         {{#group.radio value="buying" primary=true}}
                             Buying a home/condo
                         {{/group.radio}}

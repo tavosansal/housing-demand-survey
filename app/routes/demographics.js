@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  surveyRecord: Ember.inject.service(),
+
   timeframes: ['Less than 1 year', '1 - 2 years', '2 + years'],
 
   setupController(controller, model) {
@@ -11,6 +13,16 @@ export default Ember.Route.extend({
 
   actions: {
     continue() {
+      const currentSurvey = this.get('surveyRecord').current();
+      const {age, zipcode, interest, timeframe} = this.controller.getProperties('age', 'zipcode', 'interest', 'timeframe');
+
+      currentSurvey.setProperties({
+        age,
+        zipcode,
+        interest,
+        timeframe
+      })
+
       this.transitionTo('budget');
     }
   }
