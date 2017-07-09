@@ -20,7 +20,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    firebase: {
+      apiKey: 'AIzaSyA0ZkTFi5gtfC3vJDtBWabZ-vg5xyT1iRc',
+      authDomain: 'housing-demand-survey.firebaseapp.com',
+      databaseURL: 'https://housing-demand-survey.firebaseio.com',
+      storageBucket: 'housing-demand-survey.appspot.com',
+    },
   };
 
   if (environment === 'development') {
