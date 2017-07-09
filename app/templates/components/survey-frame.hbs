@@ -1,5 +1,5 @@
 <div class="survey-frame">
-    <div class="survey-modal-wrapper">{{!-- TODO: Add .show-sidebar class on the pages the sidebar should be open--}}
+    <div class="survey-modal-wrapper {{if showSidebar 'show-sidebar'}}">
         <div class="survey-modal">
             {{yield}}
         </div>
@@ -13,17 +13,17 @@
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Total Square Feet</span>
-                    <span class="mid-col">2500</span>
+                    <span class="mid-col">{{totalSquareFootage}}</span>
                     <span class="right-col hidden">3000</span>
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Price Per Square Foot</span>
-                    <span class="mid-col">$1.25</span>
+                    <span class="mid-col">${{costPerSquareFoot}}</span>
                     <span class="right-col hidden">$1.75</span>
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Total Monthly Payment</span>
-                    <span class="mid-col">$2000</span>
+                    <span class="mid-col">${{totalBudget}}</span>
                     <span class="right-col hidden">$2500</span>
                 </div>
             </div>
