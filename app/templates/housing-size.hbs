@@ -1,4 +1,5 @@
-{{#survey-frame}}
+{{#survey-frame
+  showSidebar=true}}
     <div class="survey-nav">
         <div class="nav-section-wrapper">
             {{#link-to 'demographics' class="nav-section section-end"}}
@@ -34,10 +35,13 @@
         <div class="unit-size">
             <div class="unit-size-options-row">
                 <div class="unit-size-sliders">
-                    <h3>How many bedrooms?</h3>{{!-- TODO: Max of 3+ --}}
-                    {{paper-slider class="flex" min=0 max=3}}
+                    <h3>How many bedrooms?</h3>
+                    {{paper-slider class="flex" min=1 max=4 value=bedrooms onChange=(action (mut bedrooms))}}
+                    {{paper-input type="number" min=1 value=bedrooms onChange=(action (mut bedrooms))}}
                     <h3>How many bathrooms?</h3>{{!-- TODO: Make this work in increments of 1/2, max at 2.5--}}
-                    {{paper-slider class="flex" min=0 max=2.5}}
+                    {{paper-slider class="flex" min=1 max=4 step=1 value=bathroomsSlider onChange=(action 'setBathroom')}}
+                    {{bathrooms}}
+                    {{!--{{paper-input type="number" min=1 value=bathrooms onChange=(action (mut bathrooms))}}--}}
                 </div>
                 <div class="survey-hero-card">
                     <div class="survey-card-image">

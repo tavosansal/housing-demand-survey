@@ -1,4 +1,6 @@
-{{#survey-frame}}
+{{#survey-frame
+  showSidebar=true
+  showSelection=true}}
     <div class="survey-nav">
         <div class="nav-section-wrapper">
             {{#link-to 'demographics' class="nav-section section-end"}}
@@ -35,16 +37,22 @@
             <div class="amenities-parking">
                 <h4>Parking</h4>
                 <hr>
-                <div class="amenities-parking-row">
-                    <p>1 Parking Stall</p>
-                    {{#paper-radio toggle=true value="Buy" groupValue=toggleValue onChange=(action (mut toggleValue))}}
-                        On-site
-                    {{/paper-radio}}
-                    {{#paper-radio toggle=true value="Buy" groupValue=toggleValue onChange=(action (mut toggleValue))}}
-                        Nearby
-                    {{/paper-radio}}
-                </div>
-                {{#paper-button}}
+                {{#each parkingStalls as |stall index|}}
+                  <div class="amenities-parking-row">
+                      <p>Parking Stall</p>
+                      {{#paper-radio toggle=true value="Buy" groupValue=toggleValue onChange=(action (mut toggleValue))}}
+                          On-site
+                      {{/paper-radio}}
+                      {{#paper-radio toggle=true value="Buy" groupValue=toggleValue onChange=(action (mut toggleValue))}}
+                          Nearby
+                      {{/paper-radio}}
+                      {{#paper-button onClick=(action 'removeStall' stall)}}
+                        {{paper-icon "add-circle"}}
+                        Remove
+                      {{/paper-button}}
+                    </div>
+                  {{/each}}
+                {{#paper-button onClick=(action 'addStall')}}
                     {{paper-icon "add-circle"}}
                     Add A Parking Stall
                 {{/paper-button}}
@@ -57,17 +65,7 @@
                     <div class="amenities-list left">
                         <h5>Essential Amenities</h5>
                         <ul>
-                            <li>Cardio Machines</li>
-                            <li>Free Weights</li>
-                            <li>Steam Room</li>
-                            <li>Rooftop Lounge</li>
-                            <li>Courtyard Lounge</li>
-                            <li>In Unit Laundry</li>
-                            <li>In Building Laundry</li>
-                            <li>Childrens Play Area</li>
-                            <li>Dog Run</li>
-                            <li>Community Garden</li>
-                            <li>Picnic Area</li>
+                          <li></li>
                         </ul>
                     </div>
                     <div class="amenities-list-controls">
@@ -81,17 +79,9 @@
                     <div class="amenities-list right">
                         <h5>Non-Essential Amenities</h5>
                         <ul>
-                            <li>Cardio Machines</li>
-                            <li>Free Weights</li>
-                            <li>Steam Room</li>
-                            <li>Rooftop Lounge</li>
-                            <li>Courtyard Lounge</li>
-                            <li>In Unit Laundry</li>
-                            <li>In Building Laundry</li>
-                            <li>Childrens Play Area</li>
-                            <li>Dog Run</li>
-                            <li>Community Garden</li>
-                            <li>Picnic Area</li>
+                          {{#each amenities as |amenity|}}
+                            <li>{{amenity}}</li>
+                          {{/each}}
                         </ul>
                     </div>
                 </div>
