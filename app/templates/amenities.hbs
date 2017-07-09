@@ -64,9 +64,13 @@
                 <div class="amenities-list-wrapper">
                     <div class="amenities-list left">
                         <h5>Essential Amenities</h5>
-                        <ul>
-                          <li></li>
-                        </ul>
+                        {{#sortable-objects sortableObjectList=selectedAmenities sortEndAction='addToAmenities' sortingScope='a'}}
+                          {{#each selectedAmenities as |amenity|}}
+                            {{#draggable-object content=amenity overrideClass='sortObject' isSortable=true sortingScope='a'}}
+                              {{amenity}}
+                            {{/draggable-object}}
+                          {{/each}}
+                        {{/sortable-objects}}
                     </div>
                     <div class="amenities-list-controls">
                         {{#paper-button raised=true mini=true class="edit-button"}}
@@ -78,11 +82,13 @@
                     </div>
                     <div class="amenities-list right">
                         <h5>Non-Essential Amenities</h5>
-                        <ul>
+                        {{#sortable-objects sortableObjectList=amenities sortEndAction='removeFromAmenities' sortingScope='a'}}
                           {{#each amenities as |amenity|}}
-                            <li>{{amenity}}</li>
+                            {{#draggable-object content=amenity  overrideClass='sortObject' isSortable=true sortingScope='a'}}
+                              {{amenity}}
+                            {{/draggable-object}}
                           {{/each}}
-                        </ul>
+                        {{/sortable-objects}}
                     </div>
                 </div>
             </div>

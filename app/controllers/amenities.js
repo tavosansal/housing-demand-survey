@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
     'Community Garden',
     'Picnic Area',
   ],
+  selectedAmenities: ['Drag Items Here'],
 
   actions: {
     addStall() {
@@ -27,6 +28,16 @@ export default Ember.Controller.extend({
     },
     removeStall(stall) {
       this.get('parkingStalls').removeObject(stall);
-    }
+    },
+    addToAmenities() {
+      if (this.get('selectedAmenities.length') > 1) {
+        this.get('selectedAmenities').removeObject('Drag Items Here');
+      }
+    },
+    removeFromAmenities() {
+      if (this.get('selectedAmenities.length') === 0) {
+        this.get('selectedAmenities').addObject('Drag Items Here');
+      }
+    },
   },
 });
