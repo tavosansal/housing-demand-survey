@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
   actions: {
     continue() {
       const currentSurvey = this.get('surveyRecord').current();
-      const {peopleInHousehold, incomesInHousehold, housingBudget, squareFeetPerPerson} = this.controller.getProperties(
+      const {peopleInHousehold, incomesInHousehold, housingBudget, squareFeetPerPerson} = this.getProperties(
         'peopleInHousehold', 'incomesInHousehold', 'housingBudget', 'squareFeetPerPerson');
 
       currentSurvey.setProperties({
@@ -32,7 +32,7 @@ export default Ember.Controller.extend({
         squareFeetPerPerson,
       });
 
-      this.transitionTo('location');
+      this.transitionToRoute('location');
     },
   },
 });

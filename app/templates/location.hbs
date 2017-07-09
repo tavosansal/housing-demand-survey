@@ -1,4 +1,5 @@
-{{#survey-frame}}
+{{#survey-frame
+  showSidebar=true}}
     <div class="survey-nav">
         <div class="nav-section-wrapper">
             {{#link-to 'demographics' class="nav-section section-end"}}
@@ -34,7 +35,7 @@
         <div class="location">
             <div class="location-age-toggle">
                 <span>New Neighborhood</span>
-                {{#paper-switch class="paper-switch" value=booleanProp1 onChange=(action (mut booleanProp1))}}
+                {{#paper-switch class="paper-switch" value=locationPreference onChange=(action (mut locationPreference))}}
                     Existing
                 {{/paper-switch}}
             </div>
@@ -42,31 +43,50 @@
                 <div class="survey-hero-card">
                     <div class="survey-hero-options-row">
                         <div class="survey-hero-options-section">
-                            <button class="survey-hero-option is-focused">
-                                Option 1
+                            <button class="survey-hero-option {{if suburban 'is-focused'}}" {{action "setType" "suburban"}}>
+                                Suburban
                             </button>
-                            <button class="survey-hero-option">
-                                Option 2
+                            <button class="survey-hero-option {{if complete 'is-focused'}}" {{action "setType" "complete"}}>
+                                Complete
                             </button>
-                            <button class="survey-hero-option">
-                                Option 3
+                            <button class="survey-hero-option {{if center 'is-focused'}}" {{action "setType" "center"}}>
+                                Center
                             </button>
                         </div>
                     </div>
-                    <div class="survey-card-image">
-                        <h4>Location 1</h4>
-                        {{#paper-button raised=true mini=true class="hero-arrow back"}}
+                  <div class="survey-card-image">
+                    {{#if suburban}}
+                      {{#paper-button raised=true mini=true class="hero-arrow back" onClick=(action 'setType' 'center')}}
                             {{paper-icon "keyboard-arrow-left"}}
                         {{/paper-button}}
                         <div class="hero-image"></div>
-                        {{#paper-button raised=true mini=true class="hero-arrow forward"}}
+                        {{#paper-button raised=true mini=true class="hero-arrow forward" onClick=(action 'setType' 'complete')}}
                             {{paper-icon "keyboard-arrow-right"}}
                         {{/paper-button}}
-                        <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nullam laoreet imperdiet lectus sit amet gravida.
-                            Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
-                            Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
+                        <p class="hero-description">Some suburban stuff
                         </p>
+                    {{else if complete}}
+                      {{#paper-button raised=true mini=true class="hero-arrow back" onClick=(action 'setType' 'suburban')}}
+                            {{paper-icon "keyboard-arrow-left"}}
+                        {{/paper-button}}
+                        <div class="hero-image"></div>
+                        {{#paper-button raised=true mini=true class="hero-arrow forward" onClick=(action 'setType' 'center')}}
+                            {{paper-icon "keyboard-arrow-right"}}
+                        {{/paper-button}}
+                        <p class="hero-description">Some complete stuff
+                        </p>
+                    {{else if center}}
+                      {{#paper-button raised=true mini=true class="hero-arrow back" onClick=(action 'setType' 'complete')}}
+                            {{paper-icon "keyboard-arrow-left"}}
+                        {{/paper-button}}
+                        <div class="hero-image"></div>
+                        {{#paper-button raised=true mini=true class="hero-arrow forward" onClick=(action 'setType' 'suburban')}}
+                            {{paper-icon "keyboard-arrow-right"}}
+                        {{/paper-button}}
+                        <p class="hero-description">
+                          Some center stuff
+                        </p>
+                    {{/if}}
                     </div>
                 </div>
             </div>
