@@ -1,1 +1,64 @@
-{{outlet}}
+{{#survey-frame}}
+    <div class="survey-header">
+        <h1>Thank you for completing the Bismarck Housing Survey</h1>
+        <p>The purpose of this survey is to help provide you with details about available housing options
+            and to help you develop a housing budget. We will then use this information to
+            track the housing needs in Bismarck and use it to promote new building projects. All your information
+            will be kept confidential.
+        </p>
+        <em>Fill out the optional information if you would like to be contacted about future housing opportunities</em>
+    </div>
+    <div class="survey-body">
+        <div class="thank-you-form">
+            {{paper-input
+                    type="text"
+                    label="Name"
+                    required=false
+                    onChange=null
+                    class="ty-name"
+            }}
+            {{paper-input
+                    type="text"
+                    label="Address"
+                    required=false
+                    onChange=null
+                    class="ty-address"
+            }}
+            {{paper-input
+                    type="text"
+                    label="Zip"
+                    required=false
+                    onChange=null
+                    class="ty-zip"
+            }}
+            {{paper-input
+                    type="text"
+                    label="Phone"
+                    required=false
+                    onChange=null
+                    class="ty-phone"
+            }}
+            {{paper-input
+                    type="email"
+                    label="Email"
+                    required=false
+                    onChange=null
+                    class="ty-email"
+            }}
+            {{paper-input
+                    type="text"
+                    label="Comments"
+                    required=false
+                    textarea=true
+                    onChange=null
+                    class="ty-comments"
+            }}
+        </div>
+    </div>
+
+    <div class="survey-footer">
+        {{#paper-button raised=true primary=true class='next-btn'}}
+            {{#link-to 'location'}}Finish{{/link-to}}
+        {{/paper-button}}
+    </div>
+{{/survey-frame}}

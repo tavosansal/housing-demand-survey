@@ -431,6 +431,18 @@
             }
           }
         }
+        .thank-you-form {
+          margin: 30px;
+          md-input-container {
+            width: 100%;
+            &.ty-zip {
+              width: 49%;
+            }
+            &.ty-phone {
+              width: 49%;
+            }
+          }
+        }
       }
       .survey-footer {
         display: flex;
