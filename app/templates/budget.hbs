@@ -1,8 +1,5 @@
 {{#survey-frame
-  showSidebar=true
-  totalSquareFootage=totalSquareFootage
-  totalBudget=totalBudget
-  costPerSquareFoot=costPerSquareFoot}}
+  showSidebar=true}}
     <div class="survey-nav">
         <div class="nav-section-wrapper">
             {{#link-to 'demographics' class="nav-section section-end"}}
@@ -37,14 +34,14 @@
         <div class="budget">
             <h3>How many people live in your household?</h3>
             <div class="layout layout-align-center-center slider-container">
-              {{paper-slider class="flex" min=1 max=7 value=peopleInHousehold onChange=(action (mut peopleInHousehold))}}
-              {{paper-input type="number" min=1 value=peopleInHousehold onChange=(action (mut peopleInHousehold))}}
+              {{paper-slider class="flex" min=1 max=7 value=surveyRecord.peopleInHousehold onChange=(action (mut surveyRecord.peopleInHousehold))}}
+              {{paper-input type="number" min=1 value=surveyRecord.peopleInHousehold onChange=(action (mut surveyRecord.peopleInHousehold))}}
             </div>
 
             <h3>How many incomes are in your household?</h3>
             <div class="layout layout-align-center-center slider-container">
-              {{paper-slider class="flex" min=1 max=7 value=incomesInHousehold onChange=(action (mut incomesInHousehold))}}
-              {{paper-input type="number" value=incomesInHousehold onChange=(action (mut incomesInHousehold))}}
+              {{paper-slider class="flex" min=1 max=7 value=surveyRecord.incomesInHousehold onChange=(action (mut surveyRecord.incomesInHousehold))}}
+              {{paper-input type="number" value=surveyRecord.incomesInHousehold onChange=(action (mut surveyRecord.incomesInHousehold))}}
             </div>
 
             <h3 class="inline-block">What is your personal housing budget?</h3>
@@ -56,14 +53,14 @@
                 </div>
             </div>
             <div class="layout layout-align-center-center slider-container">
-              {{paper-slider class="flex" min=300 max=2500 step=100 value=housingBudget onChange=(action (mut housingBudget))}}
-              {{paper-input type="number" value=housingBudget onChange=(action (mut housingBudget))}}
+              {{paper-slider class="flex" min=300 max=2500 step=100 value=surveyRecord.housingBudget onChange=(action (mut surveyRecord.housingBudget))}}
+              {{paper-input type="number" value=surveyRecord.housingBudget onChange=(action (mut surveyRecord.housingBudget))}}
             </div>
 
             <h3>How much sq. footage would you like to have per person?</h3>
             <div class="layout layout-align-center-center slider-container">
-              {{paper-slider class="flex" min=300 max=1000 step=50 value=squareFeetPerPerson onChange=(action (mut squareFeetPerPerson))}}
-              {{paper-input type="number" value=squareFeetPerPerson onChange=(action (mut squareFeetPerPerson))}}
+              {{paper-slider class="flex" min=300 max=1000 step=50 value=surveyRecord.squareFeetPerPerson onChange=(action (mut surveyRecord.squareFeetPerPerson))}}
+              {{paper-input type="number" value=surveyRecord.squareFeetPerPerson onChange=(action (mut surveyRecord.squareFeetPerPerson))}}
             </div>
         </div>
     </div>

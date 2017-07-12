@@ -16,21 +16,21 @@
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Total Square Feet</span>
-                    <span class="mid-col">{{totalSquareFootage}}</span>
+                    <span class="mid-col">{{surveyRecord.totalSquareFootage}}</span>
                     {{#if showSelection}}
                       <span class="right-col">3000</span>
                     {{/if}}
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Price Per Square Foot</span>
-                    <span class="mid-col">${{costPerSquareFoot}}</span>
+                    <span class="mid-col">${{surveyRecord.costPerSquareFoot}}</span>
                     {{#if showSelection}}
                       <span class="right-col">$1.75</span>
                     {{/if}}
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Total Monthly Payment</span>
-                    <span class="mid-col">${{totalBudget}}</span>
+                    <span class="mid-col">${{surveyRecord.totalBudget}}</span>
                     {{#if showSelection}}
                       <span class="right-col">$2500</span>
                     {{/if}}
