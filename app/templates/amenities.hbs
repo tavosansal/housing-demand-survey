@@ -64,27 +64,27 @@
                 <div class="amenities-list-wrapper">
                     <div class="amenities-list left">
                         <h5>Essential Amenities</h5>
-                        {{#sortable-objects sortableObjectList=selectedAmenities sortEndAction='addToAmenities' sortingScope='a'}}
+                        {{#sortable-objects sortableObjectList=selectedAmenities class="amenities-list-inner" sortEndAction='addToAmenities' sortingScope='a'}}
                           {{#each selectedAmenities as |amenity|}}
-                            {{#draggable-object content=amenity overrideClass='sortObject' isSortable=true sortingScope='a'}}
+                            {{#draggable-object content=amenity class="amenity" overrideClass='sortObject' isSortable=true sortingScope='a'}}
                               {{amenity}}
                             {{/draggable-object}}
                           {{/each}}
                         {{/sortable-objects}}
                     </div>
-                    <div class="amenities-list-controls">
-                        {{#paper-button raised=true mini=true class="edit-button"}}
-                            {{paper-icon "arrow-back"}}
-                        {{/paper-button}}
-                        {{#paper-button raised=true mini=true class="edit-button"}}
-                            {{paper-icon "arrow-forward"}}
-                        {{/paper-button}}
-                    </div>
+                    {{!--<div class="amenities-list-controls">--}}
+                        {{!--{{#paper-button raised=true mini=true class="edit-button"}}--}}
+                            {{!--{{paper-icon "arrow-back"}}--}}
+                        {{!--{{/paper-button}}--}}
+                        {{!--{{#paper-button raised=true mini=true class="edit-button"}}--}}
+                            {{!--{{paper-icon "arrow-forward"}}--}}
+                        {{!--{{/paper-button}}--}}
+                    {{!--</div>--}}
                     <div class="amenities-list right">
                         <h5>Non-Essential Amenities</h5>
-                        {{#sortable-objects sortableObjectList=amenities sortEndAction='removeFromAmenities' sortingScope='a'}}
+                        {{#sortable-objects sortableObjectList=amenities class="amenities-list-inner" sortEndAction='removeFromAmenities' sortingScope='a'}}
                           {{#each amenities as |amenity|}}
-                            {{#draggable-object content=amenity  overrideClass='sortObject' isSortable=true sortingScope='a'}}
+                            {{#draggable-object content=amenity class="amenity"overrideClass='sortObject' isSortable=true sortingScope='a'}}
                               {{amenity}}
                             {{/draggable-object}}
                           {{/each}}

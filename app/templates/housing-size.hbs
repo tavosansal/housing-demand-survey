@@ -36,12 +36,16 @@
             <div class="unit-size-options-row">
                 <div class="unit-size-sliders">
                     <h3>How many bedrooms?</h3>
-                    {{paper-slider class="flex" min=1 max=4 value=bedrooms onChange=(action (mut bedrooms))}}
-                    {{paper-input type="number" min=1 value=bedrooms onChange=(action (mut bedrooms))}}
+                    <div class="slider-with-input">
+                        {{paper-slider class="flex" min=1 max=4 value=bedrooms onChange=(action (mut bedrooms))}}
+                        {{paper-input type="number" min=1 value=bedrooms onChange=(action (mut bedrooms))}}
+                    </div>
                     <h3>How many bathrooms?</h3>{{!-- TODO: Make this work in increments of 1/2, max at 2.5--}}
-                    {{paper-slider class="flex" min=1 max=4 step=1 value=bathroomsSlider onChange=(action 'setBathroom')}}
-                    {{bathrooms}}
-                    {{!--{{paper-input type="number" min=1 value=bathrooms onChange=(action (mut bathrooms))}}--}}
+                    <div class="slider-with-input">
+                        {{paper-slider class="flex" min=1 max=4 step=1 value=bathroomsSlider onChange=(action 'setBathroom')}}
+                        {{bathrooms}}
+                        {{!--{{paper-input type="number" min=1 value=bathrooms onChange=(action (mut bathrooms))}}--}}
+                    </div>
                 </div>
                 <div class="survey-hero-card">
                     <div class="survey-card-image">

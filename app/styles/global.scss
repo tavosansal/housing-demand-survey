@@ -32,6 +32,11 @@ hr {
 
 button {
   background: none;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
 }
 
 .inline-block {
@@ -227,5 +232,24 @@ button {
     .popup {
       display: block;
     }
+  }
+}
+
+.slider-with-input {
+  display: flex;
+  margin: 0 55px 20px;
+  align-content: center;
+  md-slider {
+    width: 100%;
+    margin: 10px;
+    .md-thumb {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  md-input-container {
+    width: 55px;
+    margin: 3px 0;
   }
 }
