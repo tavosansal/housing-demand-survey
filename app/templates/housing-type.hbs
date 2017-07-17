@@ -35,7 +35,7 @@
         <div class="housing-type">
             <div class="housing-type-family-toggle">
                 <span>Rehab</span>
-                {{#paper-switch class="paper-switch" value=booleanProp1 onChange=(action (mut booleanProp1))}}
+                {{#paper-switch class="paper-switch" value=housingTypePreference onChange=(action (mut housingTypePreference))}}
                     New Construction
                 {{/paper-switch}}
             </div>
@@ -43,32 +43,11 @@
                 <div class="survey-hero-card">
                     <div class="survey-hero-options-row">
                         <div class="survey-hero-options-section">
-                            <button class="survey-hero-option is-focused">
-                                Large Lot
+                          {{#each housingTypes as |type|}}
+                            <button class="survey-hero-option {{if (eq type.key housingType) "is-focused"}}" {{action "changeType" type.key}}>
+                              {{type.value}}
                             </button>
-                            <button class="survey-hero-option">
-                                Small Lot
-                            </button>
-                            <button class="survey-hero-option">
-                                Twin Home
-                            </button>
-                            <button class="survey-hero-option">
-                                Row Home
-                            </button>
-                        </div>
-                        <div class="survey-hero-options-section">
-                            <button class="survey-hero-option">
-                                Accessory Dwelling Unit
-                            </button>
-                            <button class="survey-hero-option">
-                                Walk-Up Flat
-                            </button>
-                            <button class="survey-hero-option">
-                                Mid-Rise Flat
-                            </button>
-                            <button class="survey-hero-option">
-                                High-Rise Flat
-                            </button>
+                          {{/each}}
                         </div>
                     </div>
                     <div class="survey-card-image">
