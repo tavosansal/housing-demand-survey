@@ -8,6 +8,9 @@ export default Ember.Service.extend({
 
   currentRecord: Ember.Object.create(),
 
+  /*
+  Computed Properties
+  */
   totalSquareFootage: Ember.computed('peopleInHousehold','squareFeetPerPerson', function () {
     return this.get('peopleInHousehold') * this.get('squareFeetPerPerson');
   }),

@@ -96,8 +96,8 @@
         {{#paper-button raised=true class='back-btn'}}
             {{#link-to 'demographics'}}Back{{/link-to}}
         {{/paper-button}}
-        {{#paper-button raised=true primary=true class='next-btn'}}
-            {{#link-to 'housing-type'}}Continue{{/link-to}}
+        {{#paper-button raised=true primary=true class='next-btn' onClick=(action 'continue')}}
+            Continue
         {{/paper-button}}
     </div>
 {{/survey-frame}}
