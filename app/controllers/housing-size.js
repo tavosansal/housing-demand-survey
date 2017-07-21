@@ -1,16 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  bathroomsSlider: 1,
+  surveyRecord: Ember.inject.service(),
 
-  bathrooms: Ember.computed('bathroomsSlider', function () {
-    const prevValue = this.get('bathroomsSlider') - 1.5;
-    return this.get('bathroomsSlider') - prevValue;
-  }),
+  bathrooms: 1,
+  bedrooms: 1,
 
   actions: {
-    setBathroom(step) {
-      const toSubtract = step - 1.5;
+    continue() {
+      this.get('surveyRecord').setProperties({
+        bathrooms: this.get('bathrooms'),
+        bedrooms: this.get('bedrooms'),
+      });
+
+      this.transitionToRoute('housing-quality');
     },
   },
 });
