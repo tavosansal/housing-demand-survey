@@ -44,19 +44,19 @@
                     <div class="survey-hero-options-row">
                         <div class="survey-hero-options-section">
                           {{#each housingTypes as |type|}}
-                            <button class="survey-hero-option {{if (eq type.key housingType) "is-focused"}}" {{action "changeType" type.key}}>
+                            <button class="survey-hero-option {{if (eq type.key housingType.key) "is-focused"}}" {{action "changeType" type}}>
                               {{type.value}}
                             </button>
                           {{/each}}
                         </div>
                     </div>
                     <div class="survey-card-image">
-                        <h4>Housing Type</h4>
-                        {{#paper-button raised=true mini=true class="hero-arrow back"}}
+                        <h4>{{housingType.value}}</h4>
+                        {{#paper-button raised=true mini=true class="hero-arrow back" onClick=(action 'previousType')}}
                             {{paper-icon "keyboard-arrow-left"}}
                         {{/paper-button}}
                         <div class="hero-image"></div>
-                        {{#paper-button raised=true mini=true class="hero-arrow forward"}}
+                        {{#paper-button raised=true mini=true class="hero-arrow forward" onClick=(action 'nextType')}}
                             {{paper-icon "keyboard-arrow-right"}}
                         {{/paper-button}}
                         <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -73,8 +73,8 @@
         {{#paper-button raised=true class='back-btn'}}
             {{#link-to 'location'}}Back{{/link-to}}
         {{/paper-button}}
-        {{#paper-button raised=true primary=true class='next-btn'}}
-            {{#link-to 'housing-size'}}Continue{{/link-to}}
+        {{#paper-button raised=true primary=true class='next-btn' onClick=(action 'continue')}}
+            Continue
         {{/paper-button}}
     </div>
 {{/survey-frame}}

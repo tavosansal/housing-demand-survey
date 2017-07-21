@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   surveyRecord: Ember.inject.service(),
 
   housingTypePreference: 'rehab',
-  housingType: 'largeLot',
+  housingType: null,
 
   housingTypes: [{
       key: 'largeLot',
@@ -33,11 +33,52 @@ export default Ember.Controller.extend({
     },
   ],
 
+  init(...args) {
+    this._super(...args);
+
+    this.set('housingType', this.get('housingTypes.firstObject'));
+  },
+
   actions: {
     changeType(newType) {
       this.set('housingType', newType);
+    },
+
+    nextType() {
+      const housingTypes = this.get('housingTypes');
+      const housingType = this.get('housingType');
+      const currentIndex = housingTypes.indexOf(housingType);
+      const lengthOfTypes = this.get('housingTypes.length');
+
+      if ((lengthOfTypes - 1) === currentIndex) {
+        this.set('housingType', this.get('housingTypes').objectAt(0));
+      } else {
+        this.set('housingType', this.get('housingTypes').objectAt(currentIndex + 1));
+      }
+    },
+
+    previousType() {
+      const housingTypes = this.get('housingTypes');
+      const housingType = this.get('housingType');
+      const currentIndex = housingTypes.indexOf(housingType);
+      const lengthOfTypes = this.get('housingTypes.length');
+
+      if (currentIndex === 0) {
+        this.set('housingType', this.get('housingTypes').objectAt(lengthOfTypes - 1));
+      } else {
+        this.set('housingType', this.get('housingTypes').objectAt(currentIndex - 1));
+      }
+    },
+
+    continue() {
+      this.get('surveyRecord').setProperties({
+        housingTypePreference: this.get('housingTypePreference'),
+        housingType: this.get('housingType'),
+      });
+
+      this.transitionToRoute('housing-size');
     }
-  }
+  },
 
 
 });
