@@ -309,7 +309,7 @@
             flex-flow: row;
             margin: 25px 10px 10px;
             .survey-hero-options-row {
-              flex-flow: column;
+              flex-flow: column !important;
               .survey-hero-options-section {
                 margin-top: 5px;
               }
