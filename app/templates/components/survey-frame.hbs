@@ -3,19 +3,19 @@
         <div class="survey-modal">
           <div class="survey-nav">
             <div class="nav-section-wrapper">
-              <button class="nav-section {{unless surveyRecord.visitedDemographics 'disabled'}} {{if (eq router.currentRouteName 'demographics') 'active'}}">
+              <button class="nav-section {{if (eq router.currentRouteName 'demographics') 'active'}}" disabled={{unless surveyRecord.visitedDemographics true}} {{action 'goTo' 'demographics'}}>
                 Demographics
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedBudget 'disabled'}} {{if (eq router.currentRouteName 'budget') 'active'}}">
+              <button class="nav-section {{if (eq router.currentRouteName 'budget') 'active'}}" disabled={{unless surveyRecord.visitedBudget true}} {{action 'goTo' 'budget'}}>
                 Budget
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedLocation 'disabled'}} {{if (eq router.currentRouteName 'location') 'active'}}">
+              <button class="nav-section {{if (eq router.currentRouteName 'location') 'active'}}" disabled={{unless surveyRecord.visitedLocation true}} {{action 'goTo' 'location'}}>
                 Location
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedHousingType 'disabled'}} {{if (eq router.currentRouteName 'housing-type') 'active'}}">
+              <button class="nav-section {{if (eq router.currentRouteName 'housing-type') 'active'}}" disabled={{unless surveyRecord.visitedHousingType true}} {{action 'goTo' 'housing-type'}}>
                 Housing Type
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedAmenities 'disabled'}} {{if (eq router.currentRouteName 'amenities') 'active'}}">
+              <button class="nav-section {{if (eq router.currentRouteName 'amenities') 'active'}}" disabled={{unless surveyRecord.visitedAmenities true}} {{action 'goTo' 'amenities'}}>
                 Amenities
               </button>
             </div>
