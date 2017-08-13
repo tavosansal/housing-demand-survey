@@ -254,9 +254,10 @@
             md-input-container {
               margin: 5px 0;
             }
-            &.timeframe {
-              margin-top: 35px;
-              margin-bottom: 30px;
+            &.age {
+              md-input-container {
+                width: 55px;
+              }
             }
           }
         }
