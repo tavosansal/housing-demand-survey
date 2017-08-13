@@ -8,5 +8,9 @@ export default Ember.Component.extend({
     goTo(routeName) {
       this.get('router').transitionTo(routeName);
     },
+
+    toggleSidebar() {
+      this.toggleProperty('showSidebar');
+    }
   },
 });
