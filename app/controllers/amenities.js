@@ -3,6 +3,15 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   parkingStalls: Ember.A(),
   amenities: [
+    'High-end windows',
+    'High-end Trim and Hardware',
+    'High-end Countertops',
+    'High-end Cabinets',
+    'High-end Plumbing Fixtures',
+    'High-end Appliances',
+    'High/Vaulted Ceiling ',
+    'High-end Cabinets',
+    'Large Windows',
     'Cardio Machines',
     'Free Weights',
     'Steam Room',
