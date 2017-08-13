@@ -12,7 +12,6 @@ Router.map(function() {
   this.route('budget');
   this.route('location');
   this.route('housing-type');
-  this.route('housing-size');
   this.route('housing-quality');
   this.route('parking');
   this.route('amenities');
