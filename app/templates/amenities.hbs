@@ -23,11 +23,12 @@
                         {{paper-icon "remove-circle"}}
                       {{/paper-button}}
                     </div>
-                  {{/each}}
+                  {{/each}}{{#if (lt parkingStalls.length 4)}}
                 {{#paper-button onClick=(action 'addStall')}}
-                    {{paper-icon "add-circle"}}
-                    Add A Parking Stall
+                  {{paper-icon "add-circle"}}
+                  Add A Parking Stall
                 {{/paper-button}}
+              {{/if}}
             </div>
             <div class="amenities-building">
                 <h4>Building Amenities</h4>
