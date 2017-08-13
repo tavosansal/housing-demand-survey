@@ -5,6 +5,11 @@ export default Ember.Route.extend({
 
   timeframes: ['Less than 1 year', '1 - 2 years', '2 + years'],
 
+
+  activate() {
+    this.get('surveyRecord').set('visitedDemographics', true);
+  },
+
   setupController(controller, model) {
     this._super(controller, model);
 

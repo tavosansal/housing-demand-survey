@@ -3,21 +3,21 @@
         <div class="survey-modal">
           <div class="survey-nav">
             <div class="nav-section-wrapper">
-              {{#link-to 'demographics' class="nav-section"}}
-                  Demographics
-              {{/link-to}}
-              {{#link-to 'budget' class="nav-section"}}
-                  Budget
-              {{/link-to}}
-              {{#link-to 'location' class="nav-section active"}}
-                  Location
-              {{/link-to}}
-              {{#link-to 'housing-type' class="nav-section disabled"}}
-                  Housing Type
-              {{/link-to}}
-              {{#link-to 'amenities' class="nav-section disabled"}}
-                  Amenities
-              {{/link-to}}
+              <button class="nav-section {{unless surveyRecord.visitedDemographics 'disabled'}}">
+                Demographics
+              </button>
+              <button class="nav-section {{unless surveyRecord.visitedBudget 'disabled'}}">
+                Budget
+              </button>
+              <button class="nav-section {{unless surveyRecord.visitedLocation 'disabled'}}">
+                Location
+              </button>
+              <button class="nav-section {{unless surveyRecord.visitedHousingType 'disabled'}}">
+                Housing Type
+              </button>
+              <button class="nav-section {{unless surveyRecord.visitedAmenities 'disabled'}}">
+                Amenities
+              </button>
             </div>
           </div>
             {{yield}}

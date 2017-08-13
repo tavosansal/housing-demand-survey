@@ -8,6 +8,12 @@ export default Ember.Service.extend({
 
   currentRecord: Ember.Object.create(),
 
+  visitedDemographics: false,
+  visitedBudget: false,
+  visitedLocation: false,
+  visitedHousingType: false,
+  visitedAmenities: false,
+
   /*
   Computed Properties
   */
