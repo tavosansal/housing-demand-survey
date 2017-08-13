@@ -155,12 +155,7 @@
           display: flex;
           flex-flow: row;
           border-bottom: 1px solid $light-gray;
-          &:first-of-type {
-            width: 110%;
-          }
-          &:last-of-type {
-            width: 90%;
-          }
+          width: 100%;
           .nav-section {
             display: inline-flex;
             font-size: 12px;
@@ -288,6 +283,11 @@
             display: flex;
             flex-flow: row;
             margin: 10px;
+            .survey-hero-options-row {
+              .survey-hero-option {
+                width: calc(33.3% - 10px);
+              }
+            }
           }
         }
         .housing-type {
@@ -309,51 +309,8 @@
             flex-flow: row;
             margin: 25px 10px 10px;
             .survey-hero-options-row {
-              flex-flow: column !important;
-              .survey-hero-options-section {
-                margin-top: 5px;
-              }
-            }
-          }
-        }
-        .unit-size {
-          .unit-size-options-row {
-            display: flex;
-            flex-flow: column;
-            margin: 10px;
-            .unit-size-sliders {
-              margin-bottom: 10px;
-              h3 {
-                margin: 5px 0;
-              }
-            }
-          }
-        }
-        .housing-quality {
-          .quality-questions-wrapper {
-            display: flex;
-            flex-flow: column;
-            .quality-questions-row {
-              display: flex;
-              flex-flow: row;
-              flex-wrap: wrap;
-              .quality-question {
-                padding: 5px;
-                width: 100%;
-                max-width: 175px;
-                margin: 0 auto;
-                h4 {
-                  margin-bottom: 5px;
-                }
-                .image {
-                  background-color: $lightest-gray;
-                  height: 100px;
-                  width: 100%;
-                  margin-bottom: 15px;
-                }
-                md-radio-button {
-                  margin-bottom: 5px;
-                }
+              .survey-hero-option {
+                width: calc(25% - 10px);
               }
             }
           }
@@ -500,11 +457,6 @@
             &:last-of-type {
               border-top-right-radius: 0 !important;
             }
-          }
-        }
-        .survey-body {
-          .survey-hero-options-row {
-            flex-flow: column;
           }
         }
         .survey-footer {

@@ -15,28 +15,28 @@
             <div class="housing-type-options-row">
                 <div class="survey-hero-card">
                     <div class="survey-hero-options-row">
-                        <div class="survey-hero-options-section">
                           {{#each housingTypes as |type|}}
                             <button class="survey-hero-option {{if (eq type.key housingType.key) "is-focused"}}" {{action "changeType" type}}>
                               {{type.value}}
                             </button>
                           {{/each}}
-                        </div>
                     </div>
                     <div class="survey-card-image">
-                        <h4>{{housingType.value}}</h4>
-                        {{#paper-button raised=true mini=true class="hero-arrow back" onClick=(action 'previousType')}}
-                            {{paper-icon "keyboard-arrow-left"}}
-                        {{/paper-button}}
-                        <div class="hero-image"></div>
-                        {{#paper-button raised=true mini=true class="hero-arrow forward" onClick=(action 'nextType')}}
-                            {{paper-icon "keyboard-arrow-right"}}
-                        {{/paper-button}}
-                        <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nullam laoreet imperdiet lectus sit amet gravida.
-                            Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
-                            Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
-                        </p>
+                        <div class="hero-image-wrapper">
+                            <h4>{{housingType.value}}</h4>
+                            {{#paper-button raised=true mini=true class="hero-arrow back" onClick=(action 'previousType')}}
+                                {{paper-icon "keyboard-arrow-left"}}
+                            {{/paper-button}}
+                            <div class="hero-image"></div>
+                            {{#paper-button raised=true mini=true class="hero-arrow forward" onClick=(action 'nextType')}}
+                                {{paper-icon "keyboard-arrow-right"}}
+                            {{/paper-button}}
+                            <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nullam laoreet imperdiet lectus sit amet gravida.
+                                Pellentesque ac ligula ut tortor malesuada posuere nec non lectus.
+                                Suspendisse scelerisque dui neque. Aliquam vel nisi sapien
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
