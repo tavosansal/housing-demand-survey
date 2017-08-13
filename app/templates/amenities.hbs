@@ -37,17 +37,19 @@
             <div class="amenities-parking">
                 <h4>Parking</h4>
                 <hr>
-                {{#each parkingStalls as |stall index|}}
+                {{#each parkingStalls as |stall|}}
                   <div class="amenities-parking-row">
                       <p>Parking Stall</p>
-                      {{#paper-radio toggle=true value="Buy" groupValue=toggleValue onChange=(action (mut toggleValue))}}
-                          On-site
-                      {{/paper-radio}}
-                      {{#paper-radio toggle=true value="Buy" groupValue=toggleValue onChange=(action (mut toggleValue))}}
-                          Nearby
-                      {{/paper-radio}}
+
+
+                      {{#paper-radio-group
+                        groupValue=(readonly stall.parkingType)
+                        onChange=(action (mut stall.parkingType)) as |group|}}
+                        {{#group.radio value="On Site" primary=true}} On Site {{/group.radio}}
+                        {{#group.radio value="Near By" primary=true}} Nearby {{/group.radio}}
+                      {{/paper-radio-group}}
                       {{#paper-button onClick=(action 'removeStall' stall)}}
-                        {{paper-icon "add-circle"}}
+                        {{paper-icon "remove-circle"}}
                         Remove
                       {{/paper-button}}
                     </div>

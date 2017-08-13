@@ -30,8 +30,7 @@ export default Ember.Controller.extend({
     addStall() {
       if (this.get('parkingStalls.length') < 4) {
         this.get('parkingStalls').addObject({
-          onSite: true,
-          nearby: false,
+          parkingType: "On Site",
         });
       }
     },
