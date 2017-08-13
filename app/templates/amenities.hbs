@@ -8,24 +8,22 @@
     <div class="survey-body">
         <div class="amenities">
             <div class="amenities-parking">
-              <h4>Parking</h4>
-              <hr>
-              {{#each parkingStalls as |stall index|}}
-                <div class="amenities-parking-row">
-                  <p>Parking Stall #{{add-one index}}</p>
-                  {{#paper-radio-group
-                    groupValue=(readonly stall.parkingType)
-                    onChange=(action (mut stall.parkingType)) as |group|}}
-                    {{#group.radio value="On Site" primary=true}} On Site {{/group.radio}}
-                    {{#group.radio value="Near By" primary=true}} Nearby {{/group.radio}}
-                  {{/paper-radio-group}}
-                  {{#paper-button onClick=(action 'removeStall' stall)}}
-                    {{paper-icon "remove-circle"}}
-                    Remove
-                  {{/paper-button}}
-                </div>
-              {{/each}}
-              {{#if (lt parkingStalls.length 4)}}
+                <h4>Parking</h4>
+                <hr>
+                {{#each parkingStalls as |stall index|}}
+                  <div class="amenities-parking-row">
+                      <p>Parking Stall #{{add-one index}}</p>
+                      {{#paper-radio-group
+                        groupValue=(readonly stall.parkingType)
+                        onChange=(action (mut stall.parkingType)) as |group|}}
+                        {{#group.radio value="On Site" primary=true}} On Site {{/group.radio}}
+                        {{#group.radio value="Near By" primary=true}} Nearby {{/group.radio}}
+                      {{/paper-radio-group}}
+                      {{#paper-button onClick=(action 'removeStall' stall)}}
+                        {{paper-icon "remove-circle"}}
+                      {{/paper-button}}
+                    </div>
+                  {{/each}}{{#if (lt parkingStalls.length 4)}}
                 {{#paper-button onClick=(action 'addStall')}}
                   {{paper-icon "add-circle"}}
                   Add A Parking Stall

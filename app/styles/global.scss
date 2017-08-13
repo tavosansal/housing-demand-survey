@@ -78,6 +78,8 @@ button {
     color: $dark-gray;
   }
   &:hover {
+    cursor: pointer;
+    transition: all 0.3s ease-out;
     .card-image {
       transform: scale(1.02);
       overflow: hidden;
@@ -88,8 +90,6 @@ button {
         transition: all 150ms ease-out;
       }
     }
-    cursor: pointer;
-    transition: all 0.3s ease-out;
   }
 }
 
