@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   surveyRecord: Ember.inject.service(),
 
-  redirect() {
-    if (!this.get('surveyRecord.visitedDemographics')) {
+  redirect(model, transition) {
+    if (!transition.queryParams.godMode && !this.get('surveyRecord.visitedDemographics')) {
       this.transitionTo('demographics');
     }
   },
