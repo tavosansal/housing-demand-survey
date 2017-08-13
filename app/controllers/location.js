@@ -2,24 +2,24 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   surveyRecord: Ember.inject.service(),
-  locationType: 'suburban',
+  location: 'suburban',
 
-  suburban: Ember.computed.equal('locationType', 'suburban'),
-  center: Ember.computed.equal('locationType', 'center'),
-  complete: Ember.computed.equal('locationType', 'complete'),
+  suburban: Ember.computed.equal('location', 'suburban'),
+  center: Ember.computed.equal('location', 'center'),
+  complete: Ember.computed.equal('location', 'complete'),
 
   currentIndex: 0,
 
   actions: {
     setType(type) {
-      this.set('locationType', type);
+      this.set('location', type);
     },
 
     continue() {
-      const { locationType } = this.getProperties('locationType', 'locationPreference');
+      const { location } = this.getProperties('location');
 
       this.get('surveyRecord').setProperties({
-        locationType,
+        location,
       });
 
       this.transitionToRoute('housing-type');

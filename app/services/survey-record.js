@@ -14,6 +14,9 @@ export default Ember.Service.extend({
   visitedHousingType: false,
   visitedAmenities: false,
 
+  didSelectHousingOptions: Ember.computed.and('housingTypePreference', 'housingType'),
+  didSelectLocation: Ember.computed.bool('location'),
+
   /*
   Computed Properties
   */

@@ -56,19 +56,25 @@
                 </div>
             </div>
             <div class="survey-selections">
-                <h4 class="section-header">Location</h4>
-                <div class="selection-image">
-                    {{#paper-button raised=true mini=true class="edit-button"}}
+                {{#if surveyRecord.didSelectLocation}}
+                  <h4 class="section-header">Location</h4>
+                  <div class="selection-image">
+                    {{surveyRecord.location}}
+                    {{#paper-link 'location' raised=true mini=true class="edit-button"}}
                         {{paper-icon "mode-edit"}}
-                    {{/paper-button}}
-                </div>
-                <h4 class="section-header">Housing Type</h4>
-                <div class="selection-image">
-                  {{surveyRecord.housingType.value}}
-                    {{#paper-button raised=true mini=true class="edit-button"}}
-                        {{paper-icon "mode-edit"}}
-                    {{/paper-button}}
-                </div>
+                    {{/paper-link}}
+                  </div>
+                {{/if}}
+
+                {{#if surveyRecord.didSelectHousingOptions}}
+                  <h4 class="section-header">Housing Type</h4>
+                  <div class="selection-image">
+                    {{surveyRecord.housingType.value}}
+                      {{#paper-link 'housing-type' raised=true mini=true class="edit-button"}}
+                          {{paper-icon "mode-edit"}}
+                      {{/paper-link}}
+                  </div>
+                {{/if}}
             </div>
         </div>
     </div>
