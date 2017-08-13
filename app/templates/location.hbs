@@ -1,5 +1,5 @@
 {{#survey-frame
-  showSidebar=true}}
+        showSidebar=true}}
     <div class="survey-header">
         <h1>Location Preference</h1>
         <p>Where would you like to live?</p>
@@ -9,7 +9,6 @@
             <div class="location-options-row">
                 <div class="survey-hero-card">
                     <div class="survey-hero-options-row">
-                        <div class="survey-hero-options-section">
                             <button class="survey-hero-option {{if suburban 'is-focused'}}" {{action "setType" "suburban"}}>
                                 Suburban
                             </button>
@@ -19,23 +18,49 @@
                             <button class="survey-hero-option {{if center 'is-focused'}}" {{action "setType" "center"}}>
                                 Center
                             </button>
-                        </div>
                     </div>
-                  <div class="survey-card-image">
-                    {{#if suburban}}
-                        <div class="hero-image"></div>
-                        <p class="hero-description">Some suburban stuff
-                        </p>
-                    {{else if complete}}
-                        <div class="hero-image"></div>
-                        <p class="hero-description">Some complete stuff
-                        </p>
-                    {{else if center}}
-                        <div class="hero-image"></div>
-                        <p class="hero-description">
-                          Some center stuff
-                        </p>
-                    {{/if}}
+                    <div class="survey-card-image">
+                        <div class="thumbnails-col">
+                            <div class="thumbnail">
+
+                            </div>
+                            <div class="thumbnail">
+
+                            </div>
+                            <div class="thumbnail">
+
+                            </div>
+                            <div class="thumbnail">
+
+                            </div>
+                            <div class="thumbnail">
+
+                            </div>
+                            <div class="thumbnail">
+
+                            </div>
+                        </div>
+                        <div class="hero-image-wrapper">
+                            {{#if suburban}}
+                                <h4>Image Title</h4>
+                                <div class="hero-image"></div>
+                                <p class="hero-description">
+                                    Image Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos labore nostrum officia quos vero? Alias cum dolore earum explicabo fugit odio totam! Corporis impedit laudantium quos saepe sequi unde veritatis?
+                                </p>
+                            {{else if complete}}
+                                <h4>Image Title</h4>
+                                <div class="hero-image"></div>
+                                <p class="hero-description">
+                                    Image Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci aliquid aperiam architecto blanditiis cumque doloremque dolores eius exercitationem fugiat, laboriosam maiores odio, quaerat reiciendis sed tempora velit voluptatem.
+                                </p>
+                            {{else if center}}
+                                <h4>Image Title</h4>
+                                <div class="hero-image"></div>
+                                <p class="hero-description">
+                                    Image Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eligendi excepturi id in libero numquam rem sunt tenetur veniam! Cupiditate exercitationem ipsa perspiciatis quaerat qui quis recusandae sapiente sed veritatis!
+                                </p>
+                            {{/if}}
+                        </div>
                     </div>
                 </div>
             </div>
