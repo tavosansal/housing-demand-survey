@@ -67,9 +67,9 @@
         </div>
     </div>
     <div class="survey-footer">
-        {{#paper-button raised=true class='back-btn'}}
-            {{#link-to 'demographics'}}Back{{/link-to}}
-        {{/paper-button}}
+      {{#paper-link 'demographics' class='back-btn' raised=true}}
+          Back
+        {{/paper-link}}
         {{#paper-button raised=true primary=true class='next-btn' onClick=(action 'continue')}}
             Continue
         {{/paper-button}}
