@@ -1,25 +1,30 @@
 <div class="survey-frame">
     <div class="survey-modal-wrapper {{if showSidebar 'show-sidebar'}}">
         <div class="survey-modal">
-          <div class="survey-nav">
-            <div class="nav-section-wrapper">
-              <button class="nav-section {{if (eq router.currentRouteName 'demographics') 'active'}}" disabled={{unless surveyRecord.visitedDemographics true}} {{action 'goTo' 'demographics'}}>
-                Demographics
-              </button>
-              <button class="nav-section {{if (eq router.currentRouteName 'budget') 'active'}}" disabled={{unless surveyRecord.visitedBudget true}} {{action 'goTo' 'budget'}}>
-                Budget
-              </button>
-              <button class="nav-section {{if (eq router.currentRouteName 'location') 'active'}}" disabled={{unless surveyRecord.visitedLocation true}} {{action 'goTo' 'location'}}>
-                Location
-              </button>
-              <button class="nav-section {{if (eq router.currentRouteName 'housing-type') 'active'}}" disabled={{unless surveyRecord.visitedHousingType true}} {{action 'goTo' 'housing-type'}}>
-                Housing Type
-              </button>
-              <button class="nav-section {{if (eq router.currentRouteName 'amenities') 'active'}}" disabled={{unless surveyRecord.visitedAmenities true}} {{action 'goTo' 'amenities'}}>
-                Amenities
-              </button>
+            <div class="survey-nav">
+                <div class="nav-section-wrapper">
+                    <button class="nav-section {{if (eq router.currentRouteName 'demographics') 'active'}}"
+                            disabled={{unless surveyRecord.visitedDemographics true}} {{action 'goTo' 'demographics'}}>
+                        Demographics
+                    </button>
+                    <button class="nav-section {{if (eq router.currentRouteName 'budget') 'active'}}" disabled={{unless
+                            surveyRecord.visitedBudget true}} {{action 'goTo' 'budget'}}>
+                        Budget
+                    </button>
+                    <button class="nav-section {{if (eq router.currentRouteName 'location') 'active'}}"
+                            disabled={{unless surveyRecord.visitedLocation true}} {{action 'goTo' 'location'}}>
+                        Location
+                    </button>
+                    <button class="nav-section {{if (eq router.currentRouteName 'housing-type') 'active'}}"
+                            disabled={{unless surveyRecord.visitedHousingType true}} {{action 'goTo' 'housing-type'}}>
+                        Housing Type
+                    </button>
+                    <button class="nav-section {{if (eq router.currentRouteName 'amenities') 'active'}}"
+                            disabled={{unless surveyRecord.visitedAmenities true}} {{action 'goTo' 'amenities'}}>
+                        Amenities
+                    </button>
+                </div>
             </div>
-          </div>
             {{yield}}
         </div>
         <div class="survey-modal-sidebar">
@@ -27,31 +32,34 @@
                 {{paper-icon "menu" size="24"}}
             {{/paper-button}}
             <div class="survey-budget-comparison">
-                <h4 class="section-header">Budget</h4>
-                <div class="comparison-row comparison-header hidden">
-                    <span class="left-col"></span>
-                    <span class="mid-col">Budget</span>
-                    <span class="right-col">Selection</span>
-                </div>
+                {{#unless showSelection}}
+                    <h4 class="section-header">Budget</h4>
+                {{else}}
+                    <div class="comparison-row comparison-header">
+                        <span class="left-col"></span>
+                        <span class="mid-col">Budget</span>
+                        <span class="right-col">Selection</span>
+                    </div>
+                {{/unless}}
                 <div class="comparison-row">
                     <span class="left-col">Total Square Feet</span>
                     <span class="mid-col">{{surveyRecord.totalSquareFootage}}</span>
                     {{#if showSelection}}
-                      <span class="right-col">3000</span>
+                        <span class="right-col">3000</span>
                     {{/if}}
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Price Per Square Foot</span>
                     <span class="mid-col">${{surveyRecord.costPerSquareFoot}}</span>
                     {{#if showSelection}}
-                      <span class="right-col">$1.75</span>
+                        <span class="right-col">$1.75</span>
                     {{/if}}
                 </div>
                 <div class="comparison-row">
                     <span class="left-col">Total Monthly Payment</span>
                     <span class="mid-col">${{surveyRecord.totalBudget}}</span>
                     {{#if showSelection}}
-                      <span class="right-col">$2500</span>
+                        <span class="right-col">$2500</span>
                     {{/if}}
                 </div>
             </div>

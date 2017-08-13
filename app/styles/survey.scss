@@ -328,17 +328,22 @@
             .amenities-parking-row {
               display: flex;
               flex-flow: row;
-              margin-top: 20px;
+              align-items: center;
+              margin-top: 5px;
               p {
-                margin: 0 15px 0 0;
+                margin: 0 20px 0 0;
+              }
+              md-radio-group {
+                display: flex;
               }
               md-radio-button {
-                margin-right: 15px;
+                margin-right: 25px;
                 margin-bottom: 0;
               }
             }
             button.md-button {
-              margin: 5px 0 5px -7px;
+              margin: 6px 0 4px -7px;
+              min-width: 30px;
               opacity: 0.3;
               &:hover {
                 opacity: 1;
@@ -369,6 +374,7 @@
                   margin: 5px 20px 0 0;
                   padding: 0;
                   height: 350px;
+                  overflow: auto;
                   .amenity {
                     padding: 5px 10px;
                     &:hover {
@@ -428,6 +434,8 @@
 
 @media screen and (max-width: 850px) {
   .survey-frame {
+    overflow-y: auto;
+    overflow-x: hidden;
     .survey-modal-wrapper {
       max-width: initial;
       width: 100%;

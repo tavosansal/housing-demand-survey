@@ -21,7 +21,6 @@
                       {{/paper-radio-group}}
                       {{#paper-button onClick=(action 'removeStall' stall)}}
                         {{paper-icon "remove-circle"}}
-                        Remove
                       {{/paper-button}}
                     </div>
                   {{/each}}
@@ -45,14 +44,6 @@
                           {{/each}}
                         {{/sortable-objects}}
                     </div>
-                    {{!--<div class="amenities-list-controls">--}}
-                        {{!--{{#paper-button raised=true mini=true class="edit-button"}}--}}
-                            {{!--{{paper-icon "arrow-back"}}--}}
-                        {{!--{{/paper-button}}--}}
-                        {{!--{{#paper-button raised=true mini=true class="edit-button"}}--}}
-                            {{!--{{paper-icon "arrow-forward"}}--}}
-                        {{!--{{/paper-button}}--}}
-                    {{!--</div>--}}
                     <div class="amenities-list right">
                         <h5>Non-Essential Amenities</h5>
                         {{#sortable-objects sortableObjectList=amenities class="amenities-list-inner" sortEndAction='removeFromAmenities' sortingScope='a'}}
