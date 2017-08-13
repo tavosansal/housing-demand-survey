@@ -3,19 +3,19 @@
         <div class="survey-modal">
           <div class="survey-nav">
             <div class="nav-section-wrapper">
-              <button class="nav-section {{unless surveyRecord.visitedDemographics 'disabled'}}">
+              <button class="nav-section {{unless surveyRecord.visitedDemographics 'disabled'}} {{if (eq router.currentRouteName 'demographics') 'active'}}">
                 Demographics
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedBudget 'disabled'}}">
+              <button class="nav-section {{unless surveyRecord.visitedBudget 'disabled'}} {{if (eq router.currentRouteName 'budget') 'active'}}">
                 Budget
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedLocation 'disabled'}}">
+              <button class="nav-section {{unless surveyRecord.visitedLocation 'disabled'}} {{if (eq router.currentRouteName 'location') 'active'}}">
                 Location
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedHousingType 'disabled'}}">
+              <button class="nav-section {{unless surveyRecord.visitedHousingType 'disabled'}} {{if (eq router.currentRouteName 'housing-type') 'active'}}">
                 Housing Type
               </button>
-              <button class="nav-section {{unless surveyRecord.visitedAmenities 'disabled'}}">
+              <button class="nav-section {{unless surveyRecord.visitedAmenities 'disabled'}} {{if (eq router.currentRouteName 'amenities') 'active'}}">
                 Amenities
               </button>
             </div>
