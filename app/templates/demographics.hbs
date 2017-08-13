@@ -11,7 +11,7 @@
     {{#paper-form onSubmit=(route-action "continue") as |form|}}
         <div class="survey-body">
             <div class="demographics">
-                <div class="question-row">
+                <div class="question-row age">
                     <span class="question inline">How old are you?</span>
                     {{paper-input
                             type="number"
@@ -56,8 +56,8 @@
                         {{/group.radio}}
                     {{/paper-radio-group}}
                 </div>
-                <div class="question-row timeframe">
-                    <span class="question block">How soon would you consider doing what you marked above?</span>
+                <div class="question-row">
+                    <span class="question inline">How soon would you consider doing what you marked above?</span>
                     {{#paper-select
                             label="Timeframe"
                             options=timeframes
