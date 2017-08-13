@@ -70,8 +70,7 @@
             <h3>How many bathrooms?</h3>{{!-- TODO: Make this work in increments of 1/2, max at 2.5--}}
             <div class="slider-with-input">
                 {{paper-slider class="flex" min=1 max=4 step=0.5 value=bathrooms onChange=(action (mut bathrooms))}}
-                {{bathrooms}}
-                {{!--{{paper-input type="number" min=1 value=bathrooms onChange=(action (mut bathrooms))}}--}}
+                {{paper-input type="number" min=1 value=bathrooms onChange=(action (mut bathrooms))}}
             </div>
         </div>
     </div>
