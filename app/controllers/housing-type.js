@@ -76,7 +76,7 @@ export default Ember.Controller.extend({
         housingType: this.get('housingType'),
       });
 
-      this.transitionToRoute('housing-size');
+      this.transitionToRoute('amenities');
     }
   },
 
