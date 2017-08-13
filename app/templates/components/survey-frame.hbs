@@ -23,10 +23,10 @@
             {{yield}}
         </div>
         <div class="survey-modal-sidebar">
+            {{#paper-button raised=true class="sidebar-toggle"}}
+                {{paper-icon "menu" size="24"}}
+            {{/paper-button}}
             <div class="survey-budget-comparison">
-                {{#paper-button raised=true class="sidebar-toggle"}}
-                    {{paper-icon "menu" size="24"}}
-                {{/paper-button}}
                 <h4 class="section-header">Budget</h4>
                 <div class="comparison-row comparison-header hidden">
                     <span class="left-col"></span>
