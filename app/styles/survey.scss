@@ -164,7 +164,10 @@
             height: 50px;
             align-items: center;
             justify-content: center;
+            border-top-style: none;
             border-right: 1px solid $light-gray;
+            border-bottom-style: none;
+            border-left-style: none;
             &:hover {
               cursor: pointer;
               background-color: whitesmoke;
